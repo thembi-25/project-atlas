@@ -80,4 +80,4 @@ Idempotency tests (concurrent duplicate requests); webhook-driven reconciliation
 
 ## 20. Future extensions
 
-ACH/bank-transfer payments for larger commercial invoices; Stripe Connect-based faster payouts to the Organization (ties to [Roadmap Phase 6](../13-roadmap/phase-6-financial-services.md)); saved payment methods for repeat Customers.
+ACH/bank-transfer payments for larger commercial invoices; Stripe Connect-based faster payouts to the Organization (ties to [Strategic Phase 5](../13-roadmap/phase-6-financial-services.md)); saved payment methods for repeat Customers.

@@ -1,5 +1,7 @@
 # Phase 1: Foundation
 
+> **Technical Implementation Phase 1 of 7 — Engineering Foundation.** Implements: *prerequisite only; no Strategic Product Phase of its own.* See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md) for the authoritative distinction between Strategic Product Phases, Technical Implementation Phases, and Sprints — do not read "Phase 1" here as a product pillar.
+
 ## Goal
 
 Stand up the architecture, the multi-tenant data foundation, and identity/access — everything every later phase depends on. No customer-facing operational feature ships in this phase; it is entirely enabling infrastructure.
@@ -29,7 +31,7 @@ None — this is the root of the dependency graph in [Implementation Roadmap](..
 
 ## Explicitly out of scope for this phase
 
-Any Customer, Property, Job, or financial entity — those begin in Phase 2. See [Phase 2: Core Operations](./phase-2-core-operations.md).
+Any Customer, Property, Job, or financial entity — those begin in Technical Implementation Phase 2 (Strategic Phase 1: Core Operations). See [Phase 2: Core Operations](./phase-2-core-operations.md).
 
 ## Detail
 

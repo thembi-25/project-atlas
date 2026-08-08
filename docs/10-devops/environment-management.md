@@ -25,7 +25,7 @@ A Preview environment (Vercel deployment + ephemeral Supabase database branch) i
 
 ## Feature flags
 
-Where a feature needs to be deployed to Production but not yet activated for all Organizations (e.g., a Phase 3+ capability being rolled out gradually), a simple, database-backed feature flag (an `organization_feature_flags` table, not a third-party flagging service — consistent with [Architecture Principles](../02-architecture/architecture-principles.md) principle 4) is used, checked at the application layer, never used as a substitute for the phase-gating discipline in [Implementation Roadmap](../13-roadmap/implementation-roadmap.md).
+Where a feature needs to be deployed to Production but not yet activated for all Organizations (e.g., a Strategic Phase 2+ capability being rolled out gradually), a simple, database-backed feature flag (an `organization_feature_flags` table, not a third-party flagging service — consistent with [Architecture Principles](../02-architecture/architecture-principles.md) principle 4) is used, checked at the application layer, never used as a substitute for the phase-gating discipline in [Implementation Roadmap](../13-roadmap/implementation-roadmap.md).
 
 ## Access control per environment
 

@@ -1,6 +1,6 @@
 # Product Scope
 
-## In scope for launch (Phase 1 + Phase 2 — see [Implementation Roadmap](../13-roadmap/implementation-roadmap.md))
+## In scope for launch (Technical Implementation Phases 1 + 2 = Strategic Phase 1: Core Operations — see [ROADMAP-DECISION.md](../13-roadmap/ROADMAP-DECISION.md), [Implementation Roadmap](../13-roadmap/implementation-roadmap.md))
 
 ### Identity & Organization
 - Organization creation and settings, user invitation, Roles/Permissions (Owner, Admin, Dispatcher, Technician, Accountant, Read Only). See [Identity PRD](../06-modules/identity-prd.md), [Organization PRD](../06-modules/organization-prd.md).
@@ -40,10 +40,10 @@
 
 ## Explicitly out of scope for launch
 
-- **Supplier Marketplace** (ordering parts through connected suppliers in-app) — Phase 4. See [Marketplace PRD](../06-modules/marketplace-prd.md).
-- **Manufacturer integrations** (warranty registration APIs, product catalog sync) — Phase 5. See [Manufacturers PRD](../06-modules/manufacturers-prd.md), [Warranties PRD](../06-modules/warranties-prd.md).
-- **Financial services** (financing, faster payouts, embedded lending) — Phase 6.
-- **Industry Data Network** (aggregated cross-organization insights) — Phase 7.
+- **Supplier Marketplace** (ordering parts through connected suppliers in-app) — Strategic Phase 3. See [Marketplace PRD](../06-modules/marketplace-prd.md).
+- **Manufacturer integrations** (warranty registration APIs, product catalog sync) — Strategic Phase 4. See [Manufacturers PRD](../06-modules/manufacturers-prd.md), [Warranties PRD](../06-modules/warranties-prd.md).
+- **Financial services** (financing, faster payouts, embedded lending) — Strategic Phase 5.
+- **Industry Data Network** (aggregated cross-organization insights) — Strategic Phase 6.
 - **Predictive/AI-driven maintenance recommendations** — any AI capability beyond basic assistive drafting is out of scope for launch. See [AI Platform PRD](../06-modules/ai-platform-prd.md) and [ADR-020](../11-adr/ADR-020-ai-architecture.md).
 - **Multi-location/franchise billing structures** — out of scope; an Organization is a single tenant, and multi-branch structures within one Organization are a future extension (see [Organization](../03-domain/organization.md), Future Extensions).
 - **Payroll processing** — Atlas records technician time on jobs but does not run payroll.
@@ -53,4 +53,4 @@
 
 ## Scope boundary principle
 
-If a proposed feature does not clearly belong to Phase 1 or Phase 2 of the [Implementation Roadmap](../13-roadmap/implementation-roadmap.md), it is out of scope for launch by default and requires an explicit roadmap change, not an ad hoc addition. See [Product Principles](../00-overview/product-principles.md).
+If a proposed feature does not clearly belong to Technical Implementation Phase 1 or 2 of the [Implementation Roadmap](../13-roadmap/implementation-roadmap.md), it is out of scope for launch by default and requires an explicit roadmap change, not an ad hoc addition. See [Product Principles](../00-overview/product-principles.md).

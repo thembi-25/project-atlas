@@ -1,5 +1,7 @@
 # Phase 2: Core Operations
 
+> **Technical Implementation Phase 2 of 7 — Core Operations Build.** Implements: **Strategic Product Phase 1 — Core Operations.** See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md) for the authoritative distinction between Strategic Product Phases, Technical Implementation Phases, and Sprints. This Technical Phase is broken into [Sprint 0](./sprint-0.md) through Sprint 7 — see [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section C.
+
 ## Goal
 
 Deliver the complete operational backbone — everything a field-service business needs to replace its current tools and run its day-to-day business inside Atlas. This is the **launch** milestone. See [Product Strategy](../01-product/product-strategy.md).
@@ -20,7 +22,7 @@ Deliver the complete operational backbone — everything a field-service busines
 
 ## Dependencies
 
-Requires [Phase 1: Foundation](./phase-1-foundation.md) complete — every entity in this phase is tenant-scoped and Role-gated using Phase 1's identity/permission infrastructure.
+Requires Technical Implementation Phase 1 ([Phase 1: Foundation](./phase-1-foundation.md)) complete — every entity in this phase is tenant-scoped and Role-gated using that phase's identity/permission infrastructure. See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section D, for the full Sprint-level dependency graph within this Technical Phase.
 
 ## Internal sequencing rationale
 
@@ -35,8 +37,8 @@ CRM and Properties/Assets come first because Jobs cannot exist without a Custome
 
 ## Explicitly out of scope for this phase
 
-Marketplace ordering, Manufacturer API integration, Financial Services, Industry Data Network, any AI-assisted feature beyond what's documented as draft-only in [AI Platform PRD](../06-modules/ai-platform-prd.md) (itself not launch scope).
+Strategic Phases 2–6 in full (Property Intelligence, Supplier Marketplace, Manufacturer Integrations, Financial Services, Industry Data Network), and any AI-assisted feature beyond what's documented as draft-only in [AI Platform PRD](../06-modules/ai-platform-prd.md) (itself not launch scope). See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section F.
 
 ## Related documents
 
-[Implementation Roadmap](./implementation-roadmap.md) · [Product Scope](../01-product/product-scope.md) · [Domain Overview](../03-domain/domain-overview.md)
+[ROADMAP-DECISION.md](./ROADMAP-DECISION.md) · [Implementation Roadmap](./implementation-roadmap.md) · [Product Scope](../01-product/product-scope.md) · [Domain Overview](../03-domain/domain-overview.md)

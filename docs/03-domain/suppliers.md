@@ -2,7 +2,7 @@
 
 ## Purpose
 
-A Supplier is a vendor an Organization purchases parts/materials from (e.g., a local plumbing supply house, an electrical distributor). At launch, Suppliers are a simple reference/purchase-order record; in Phase 4 they become the counterparty in the [Marketplace](./marketplace.md).
+A Supplier is a vendor an Organization purchases parts/materials from (e.g., a local plumbing supply house, an electrical distributor). At launch, Suppliers are a simple reference/purchase-order record; in Strategic Phase 3 they become the counterparty in the [Marketplace](./marketplace.md).
 
 ## Key attributes
 
@@ -11,13 +11,13 @@ A Supplier is a vendor an Organization purchases parts/materials from (e.g., a l
 
 ## Relationships
 
-- **Belongs to** one [Organization](./organization.md) (launch scope: each Organization manages its own Supplier list; a shared, platform-wide Supplier directory is a Phase 4 Marketplace concern — see [Marketplace](./marketplace.md)).
+- **Belongs to** one [Organization](./organization.md) (launch scope: each Organization manages its own Supplier list; a shared, platform-wide Supplier directory is a Strategic Phase 3 Marketplace concern — see [Marketplace](./marketplace.md)).
 - **Referenced by** `purchase_orders` (basic, manual at launch) and, in the future, by [Inventory Items](./inventory.md) as a preferred source.
 
 ## Business rules
 
 1. Launch-scope Suppliers are informational/organizational (a place to record "we buy this from X") plus basic manual Purchase Orders (a simple record of what was ordered and received, without any live catalog, pricing, or automated ordering integration).
-2. Automated ordering, live catalogs, and pricing integration are explicitly Phase 4 (Marketplace) scope — see [Roadmap Phase 4](../13-roadmap/phase-4-marketplace.md) — and must not be implemented ahead of that phase gate.
+2. Automated ordering, live catalogs, and pricing integration are explicitly Strategic Phase 3 (Marketplace) scope — see [Strategic Phase 3](../13-roadmap/phase-4-marketplace.md) — and must not be implemented ahead of that phase gate.
 
 ## Data requirements
 

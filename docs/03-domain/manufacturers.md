@@ -2,7 +2,7 @@
 
 ## Purpose
 
-A Manufacturer is the maker of equipment installed as [Assets](./assets.md) (e.g., Carrier, Rheem, Square D). Manufacturer data underpins warranty tracking and, in Phase 5, deeper manufacturer integrations (warranty registration APIs, product compliance data).
+A Manufacturer is the maker of equipment installed as [Assets](./assets.md) (e.g., Carrier, Rheem, Square D). Manufacturer data underpins warranty tracking and, in Strategic Phase 4, deeper manufacturer integrations (warranty registration APIs, product compliance data).
 
 ## Key attributes
 
@@ -30,4 +30,4 @@ Read: all Organizations. Write (adding new Manufacturers): any staff Role with P
 
 ## Related documents
 
-[Manufacturers PRD](../06-modules/manufacturers-prd.md) · [Assets](./assets.md) · [Warranties](./warranties.md) · [Roadmap Phase 5](../13-roadmap/phase-5-manufacturers.md)
+[Manufacturers PRD](../06-modules/manufacturers-prd.md) · [Assets](./assets.md) · [Warranties](./warranties.md) · [Strategic Phase 4](../13-roadmap/phase-5-manufacturers.md)

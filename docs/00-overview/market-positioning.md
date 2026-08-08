@@ -32,4 +32,4 @@ Three positioning pillars:
 
 ## Positioning implications for the roadmap
 
-Because "property-centric" is a structural, not a marketing, claim, it must be true in the data model from the first schema (see [Properties](../03-domain/properties.md), [Assets](../03-domain/assets.md)) — it cannot be added later without a data migration that back-fills history we never captured. This is why Properties and Assets are core Phase 3 scope rather than a later differentiation feature. See [Implementation Roadmap](../13-roadmap/implementation-roadmap.md).
+Because "property-centric" is a structural, not a marketing, claim, it must be true in the data model from the first schema (see [Properties](../03-domain/properties.md), [Assets](../03-domain/assets.md)) — it cannot be added later without a data migration that back-fills history we never captured. This is why Properties and Assets are core Strategic Phase 2 scope rather than a later differentiation feature. See [Implementation Roadmap](../13-roadmap/implementation-roadmap.md).

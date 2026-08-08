@@ -1,6 +1,6 @@
 # Marketplace — PRD
 
-> **Status: Future phase (Phase 4).** This PRD documents the intended design for domain-model and roadmap completeness. It is not built at launch — see [Product Scope](../01-product/product-scope.md) and [Roadmap Phase 4](../13-roadmap/phase-4-marketplace.md).
+> **Status: Future phase (Strategic Phase 3).** This PRD documents the intended design for domain-model and roadmap completeness. It is not built at launch — see [Product Scope](../01-product/product-scope.md) and [Strategic Phase 3](../13-roadmap/phase-4-marketplace.md).
 
 ## 1. Purpose
 

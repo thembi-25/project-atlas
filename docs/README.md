@@ -26,7 +26,7 @@ Project Atlas is a vertical Industry Cloud Platform for field-service trades, la
 | [`10-devops/`](./10-devops/) | Environments, CI/CD, deployment, observability, DR |
 | [`11-adr/`](./11-adr/) | Architecture Decision Records |
 | [`12-claude/`](./12-claude/) | Instructions specifically for Claude Code |
-| [`13-roadmap/`](./13-roadmap/) | Phased implementation roadmap and sprint plans |
+| [`13-roadmap/`](./13-roadmap/) | Phased implementation roadmap and sprint plans — start with [`ROADMAP-DECISION.md`](./13-roadmap/ROADMAP-DECISION.md) for the Strategic Product Phase / Technical Implementation Phase / Sprint numbering |
 
 ## Core facts (read this before anything else)
 
@@ -37,6 +37,7 @@ Project Atlas is a vertical Industry Cloud Platform for field-service trades, la
 - **Multi-tenancy**: Organization is the tenant boundary, enforced at the database layer with PostgreSQL Row Level Security, never solely in application code. See [Multi-Tenancy](./04-database/multi-tenancy.md) and [Tenant Isolation](./07-security/tenant-isolation.md).
 - **API**: REST, versioned at `/api/v1/`, JSON, cursor pagination. See [API Overview](./05-api/api-overview.md).
 - **No overengineering**: no Kubernetes, no microservices, no Kafka, no Elasticsearch, no GraphQL, no service mesh at launch. PostgreSQL capabilities are used before new infrastructure is introduced. See [Architecture Principles](./02-architecture/architecture-principles.md).
+- **Roadmap numbering**: "Phase" means three different, deliberately distinct things — Strategic Product Phases (the 6 pillars), Technical Implementation Phases (the 7 build files), and Sprints (the granular execution unit). Never assume which one a bare "Phase N" means — see [`13-roadmap/ROADMAP-DECISION.md`](./13-roadmap/ROADMAP-DECISION.md).
 
 ## Document conventions
 

@@ -7,7 +7,7 @@ Become the system of record for small-to-midsize plumbing, HVAC, and electrical 
 ## Business model
 
 - **Primary revenue**: SaaS subscription, tiered by technician/user seat count and feature tier (see [Pricing Strategy](../01-product/pricing-strategy.md)).
-- **Secondary revenue (future phases)**: transaction take-rate on marketplace orders ([Marketplace PRD](../06-modules/marketplace-prd.md)), payment processing margin ([Payments PRD](../06-modules/payments-prd.md)), and referral/placement fees on financial services products ([Roadmap Phase 6](../13-roadmap/phase-6-financial-services.md)).
+- **Secondary revenue (future phases)**: transaction take-rate on marketplace orders ([Marketplace PRD](../06-modules/marketplace-prd.md)), payment processing margin ([Payments PRD](../06-modules/payments-prd.md)), and referral/placement fees on financial services products ([Strategic Phase 5](../13-roadmap/phase-6-financial-services.md)).
 - Revenue diversification is sequenced deliberately: transactional and data-network revenue only becomes viable once there is a real base of active organizations transacting jobs through Core Operations. We do not build monetizable marketplace or lending features before there is usage to monetize.
 
 ## Year-one objectives (post-launch)

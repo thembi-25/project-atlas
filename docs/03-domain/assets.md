@@ -11,7 +11,7 @@ An Asset is a piece of installed equipment tracked over its full lifecycle — a
 - Install date, install Job reference (which Job originally installed it, if known).
 - Location: `property_id` (required), `building_id` and `room_id` (optional, for precision — see [Buildings](./buildings.md), [Rooms](./rooms.md)).
 - Status: `active`, `removed`, `decommissioned`.
-- Expected lifespan / next-service-due hints (used for Phase 3 Property Intelligence features — see [Roadmap Phase 3](../13-roadmap/phase-3-property-intelligence.md)).
+- Expected lifespan / next-service-due hints (used for Strategic Phase 2 Property Intelligence features — see [Strategic Phase 2](../13-roadmap/phase-3-property-intelligence.md)).
 
 ## Relationships
 

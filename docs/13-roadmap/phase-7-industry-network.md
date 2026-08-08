@@ -1,8 +1,10 @@
 # Phase 7: Industry Data Network
 
+> **Technical Implementation Phase 7 of 7 — Industry Data Network Build.** Implements: **Strategic Product Phase 6 — Industry Data Network.** See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md). This is the last Technical Phase and the most gated Strategic Phase in the roadmap.
+
 ## Goal
 
-Aggregate, de-identified data across the Atlas network — equipment lifespan by manufacturer/model, regional service trends, pricing benchmarks — that benefits every participating Organization. See [Vision](../00-overview/vision.md), pillar 6. This is the most compliance-sensitive pillar and is deliberately the last phase.
+Aggregate, de-identified data across the Atlas network — equipment lifespan by manufacturer/model, regional service trends, pricing benchmarks — that benefits every participating Organization. See [Vision](../00-overview/vision.md), pillar 6. This is the most compliance-sensitive pillar and is deliberately the last Strategic Phase.
 
 ## Scope
 
@@ -13,7 +15,7 @@ Aggregate, de-identified data across the Atlas network — equipment lifespan by
 
 ## Dependencies
 
-Requires Phases 3–6 substantially mature — this phase aggregates data and trust built across Property Intelligence, Marketplace, Manufacturer Integrations, and Financial Services. It is not meaningfully buildable in isolation.
+Requires Strategic Phases 2–5 (Property Intelligence, Supplier Marketplace, Manufacturer Integrations, Financial Services — Technical Implementation Phases 3–6) substantially mature — this phase aggregates data and trust built across all four. It is not meaningfully buildable in isolation. See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section D.
 
 ## Exit criteria
 
@@ -31,4 +33,4 @@ The specific data-rights/consent framework, applicable regulatory regime, and re
 
 ## Related documents
 
-[Vision](../00-overview/vision.md) · [Analytics](../03-domain/analytics.md) · [Data Protection](../07-security/data-protection.md) · [Business Objectives](../00-overview/business-objectives.md)
+[ROADMAP-DECISION.md](./ROADMAP-DECISION.md) · [Vision](../00-overview/vision.md) · [Analytics](../03-domain/analytics.md) · [Data Protection](../07-security/data-protection.md) · [Business Objectives](../00-overview/business-objectives.md)

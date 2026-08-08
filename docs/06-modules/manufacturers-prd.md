@@ -1,27 +1,27 @@
 # Manufacturers — PRD
 
-> **Status: Launch scope covers basic reference data; deeper integration is Phase 5.** See [Roadmap Phase 5](../13-roadmap/phase-5-manufacturers.md).
+> **Status: Launch scope covers basic reference data; deeper integration is Strategic Phase 4.** See [Strategic Phase 4](../13-roadmap/phase-5-manufacturers.md).
 
 ## 1. Purpose
 
-Maintain the platform-shared Manufacturer reference data used by Assets and Warranties, and (Phase 5) integrate directly with manufacturer systems for warranty registration and product compliance data. See [Manufacturers](../03-domain/manufacturers.md).
+Maintain the platform-shared Manufacturer reference data used by Assets and Warranties, and (Strategic Phase 4) integrate directly with manufacturer systems for warranty registration and product compliance data. See [Manufacturers](../03-domain/manufacturers.md).
 
 ## 2. Business problem
 
-Staff currently look up manufacturer warranty terms manually per job; a shared, structured Manufacturer record makes this instant, and (Phase 5) automatic registration removes a paperwork step technicians often skip entirely.
+Staff currently look up manufacturer warranty terms manually per job; a shared, structured Manufacturer record makes this instant, and (Strategic Phase 4) automatic registration removes a paperwork step technicians often skip entirely.
 
 ## 3. Goals
 
 - A reliable, shared Manufacturer directory available to every Organization from day one.
-- (Phase 5) Automated warranty registration and product compliance data exchange with manufacturer partners.
+- (Strategic Phase 4) Automated warranty registration and product compliance data exchange with manufacturer partners.
 
 ## 4. Non-goals
 
-- Manufacturer-facing partner portal/dashboard — not built until Phase 5 partnerships are established.
+- Manufacturer-facing partner portal/dashboard — not built until Strategic Phase 4 partnerships are established.
 
 ## 5. Personas
 
-[Curtis (Technician)](../00-overview/user-personas.md) (selects Manufacturer when recording an Asset), a future **Manufacturer Partner** persona (Phase 5).
+[Curtis (Technician)](../00-overview/user-personas.md) (selects Manufacturer when recording an Asset), a future **Manufacturer Partner** persona (Strategic Phase 4).
 
 ## 6. User stories
 
@@ -29,7 +29,7 @@ As a Technician recording a new Asset, I want to select its manufacturer from a 
 
 ## 7. Functional requirements
 
-Launch: search/select existing platform Manufacturers; add a new Manufacturer scoped to the Organization if not found. Phase 5: warranty registration API integration, product catalog sync.
+Launch: search/select existing platform Manufacturers; add a new Manufacturer scoped to the Organization if not found. Strategic Phase 4: warranty registration API integration, product catalog sync.
 
 ## 8. Business rules
 
@@ -57,7 +57,7 @@ Typeahead search/select in the Asset creation flow; "add new manufacturer" fallb
 
 ## 14. Notifications
 
-None at launch. Phase 5: warranty registration confirmation notifications.
+None at launch. Strategic Phase 4: warranty registration confirmation notifications.
 
 ## 15. Audit requirements
 
@@ -81,4 +81,4 @@ Search/typeahead tests; cross-Organization shared-read tests (confirming Manufac
 
 ## 20. Future extensions
 
-Phase 5 warranty registration API integrations per manufacturer partner; product catalog/spec sync feeding richer Asset data at creation time.
+Strategic Phase 4 warranty registration API integrations per manufacturer partner; product catalog/spec sync feeding richer Asset data at creation time.

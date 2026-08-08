@@ -80,4 +80,4 @@ State machine transition tests; line-item-immutability-after-send tests; end-to-
 
 ## 20. Future extensions
 
-"Good/better/best" side-by-side presentation UI; financing option presentation at approval time (ties to [Roadmap Phase 6](../13-roadmap/phase-6-financial-services.md)).
+"Good/better/best" side-by-side presentation UI; financing option presentation at approval time (ties to [Strategic Phase 5](../13-roadmap/phase-6-financial-services.md)).

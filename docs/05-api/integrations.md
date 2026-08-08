@@ -14,7 +14,7 @@ The API is designed so the following become additive, not architecture-changing,
 
 - **Accounting tool integrations beyond QuickBooks Online** (e.g., Xero) — same `/api/v1/` surface, a new integration-specific client module (see [Integration Architecture](../02-architecture/integration-architecture.md)).
 - **Zapier/automation-platform-style integration** — enabled by [API keys](./authentication.md#api-keys-for-third-partyfuture-integration-use) and [outbound webhooks](./webhooks.md#outbound-webhooks-future-documented-for-domain-completeness).
-- **Supplier Marketplace partner APIs** (Phase 4) and **Manufacturer partner APIs** (Phase 5) — see [Marketplace PRD](../06-modules/marketplace-prd.md), [Manufacturers PRD](../06-modules/manufacturers-prd.md). These will likely need their own scoped API key types and Permission scopes (e.g., a Supplier's integration credential can create `marketplace_orders` but nothing else), building on the existing Permission model in [Permissions](../03-domain/permissions.md) rather than a parallel auth system.
+- **Supplier Marketplace partner APIs** (Strategic Phase 3) and **Manufacturer partner APIs** (Strategic Phase 4) — see [Marketplace PRD](../06-modules/marketplace-prd.md), [Manufacturers PRD](../06-modules/manufacturers-prd.md). These will likely need their own scoped API key types and Permission scopes (e.g., a Supplier's integration credential can create `marketplace_orders` but nothing else), building on the existing Permission model in [Permissions](../03-domain/permissions.md) rather than a parallel auth system.
 
 ## Principles for any future third-party access
 

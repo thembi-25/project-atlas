@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The Marketplace is the future commerce layer connecting Organizations to [Suppliers](./suppliers.md) for in-workflow parts ordering — a Technician short a part on a Job can order it from a connected Supplier directly, without leaving Atlas. This is Vision pillar 3; it is documented now for domain-model completeness but is **not built at launch** (Phase 4 — see [Roadmap Phase 4](../13-roadmap/phase-4-marketplace.md)).
+The Marketplace is the future commerce layer connecting Organizations to [Suppliers](./suppliers.md) for in-workflow parts ordering — a Technician short a part on a Job can order it from a connected Supplier directly, without leaving Atlas. This is Vision pillar 3; it is documented now for domain-model completeness but is **not built at launch** — see [Strategic Phase 3](../13-roadmap/phase-4-marketplace.md).
 
 ## Key attributes (planned)
 
@@ -27,4 +27,4 @@ Per [Product Strategy](../01-product/product-strategy.md), Marketplace requires 
 
 ## Related documents
 
-[Marketplace PRD](../06-modules/marketplace-prd.md) · [Suppliers](./suppliers.md) · [Inventory](./inventory.md) · [ADR-025: Marketplace Architecture](../11-adr/ADR-025-marketplace-architecture.md) · [Roadmap Phase 4](../13-roadmap/phase-4-marketplace.md)
+[Marketplace PRD](../06-modules/marketplace-prd.md) · [Suppliers](./suppliers.md) · [Inventory](./inventory.md) · [ADR-025: Marketplace Architecture](../11-adr/ADR-025-marketplace-architecture.md) · [Strategic Phase 3](../13-roadmap/phase-4-marketplace.md)

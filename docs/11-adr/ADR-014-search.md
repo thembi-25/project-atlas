@@ -33,7 +33,7 @@ Should Atlas introduce a dedicated search service (Elasticsearch, Algolia, Meili
 
 ## Risks
 
-- If a future need arises for search across genuinely large, cross-tenant, or unstructured corpora (e.g., semantic search across all Job notes for a large Organization, or a future Industry Data Network aggregate search — see [Roadmap Phase 7](../13-roadmap/phase-7-industry-network.md)), Postgres's native search may become insufficient — the specific trigger for reconsidering is documented in [Search Strategy](../02-architecture/search-strategy.md): sustained latency degradation that indexing/tuning cannot resolve.
+- If a future need arises for search across genuinely large, cross-tenant, or unstructured corpora (e.g., semantic search across all Job notes for a large Organization, or a future Industry Data Network aggregate search — see [Strategic Phase 6](../13-roadmap/phase-7-industry-network.md)), Postgres's native search may become insufficient — the specific trigger for reconsidering is documented in [Search Strategy](../02-architecture/search-strategy.md): sustained latency degradation that indexing/tuning cannot resolve.
 
 ## Migration / Rollback
 

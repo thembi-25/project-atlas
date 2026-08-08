@@ -80,4 +80,4 @@ Quantity-derivation-from-movements tests; negative-stock-warning (not block) tes
 
 ## 20. Future extensions
 
-Automated reorder suggestions/Marketplace integration (Phase 4, [Marketplace PRD](./marketplace-prd.md)); barcode scanning for receiving and consumption.
+Automated reorder suggestions/Marketplace integration (Strategic Phase 3, [Marketplace PRD](./marketplace-prd.md)); barcode scanning for receiving and consumption.

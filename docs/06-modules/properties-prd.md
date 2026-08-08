@@ -80,4 +80,4 @@ Integration tests for association add/end without data loss; tests confirming se
 
 ## 20. Future extensions
 
-Predictive maintenance signals surfaced on the Property timeline (Phase 3, [Roadmap Phase 3](../13-roadmap/phase-3-property-intelligence.md)); geocoding/routing-aware address enrichment.
+Predictive maintenance signals surfaced on the Property timeline (see [Strategic Phase 2](../13-roadmap/phase-3-property-intelligence.md)); geocoding/routing-aware address enrichment.

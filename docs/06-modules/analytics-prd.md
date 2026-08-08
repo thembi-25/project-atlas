@@ -80,4 +80,4 @@ Materialized-view-accuracy tests (compare view output to a direct aggregate quer
 
 ## 20. Future extensions
 
-Predictive/trend forecasting; Property Intelligence-informed dashboards (Phase 3); benchmark comparisons against anonymized industry data (Phase 7, [Industry Data Network](../13-roadmap/phase-7-industry-network.md)).
+Predictive/trend forecasting; Property Intelligence-informed dashboards (Strategic Phase 2); benchmark comparisons against anonymized industry data (Strategic Phase 6, [Industry Data Network](../13-roadmap/phase-7-industry-network.md)).

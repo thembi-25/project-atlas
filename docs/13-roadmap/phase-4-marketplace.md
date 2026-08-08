@@ -1,5 +1,7 @@
 # Phase 4: Supplier Marketplace
 
+> **Technical Implementation Phase 4 of 7 — Supplier Marketplace Build.** Implements: **Strategic Product Phase 3 — Supplier Marketplace.** See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md). Does not depend on, and is not blocked by, Property Intelligence (Strategic Phase 2) — see Section D of that document.
+
 ## Goal
 
 Let Organizations order parts from connected Suppliers directly inside the Job/Inventory workflow. See [Vision](../00-overview/vision.md), pillar 3, and [Marketplace PRD](../06-modules/marketplace-prd.md).
@@ -13,7 +15,7 @@ Let Organizations order parts from connected Suppliers directly inside the Job/I
 
 ## Dependencies
 
-Requires [Phase 2: Core Operations](./phase-2-core-operations.md) complete, specifically a mature, well-used [Inventory](../03-domain/inventory.md) module — Marketplace listings map directly onto `inventory_items`, so that taxonomy must already be in real, validated use. Also requires a commercially credible base of active Organizations (see [Product Strategy](../01-product/product-strategy.md)) before Supplier partnerships are viable to negotiate.
+Requires Technical Implementation Phase 2 ([Phase 2: Core Operations](./phase-2-core-operations.md)) complete, specifically a mature, well-used [Inventory](../03-domain/inventory.md) module — Marketplace listings map directly onto `inventory_items`, so that taxonomy must already be in real, validated use. Also requires a commercially credible base of active Organizations (see [Product Strategy](../01-product/product-strategy.md)) and a live Supplier partnership before this phase can begin — see [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section D, readiness criteria.
 
 ## Exit criteria
 
@@ -27,4 +29,4 @@ Multi-Supplier price comparison, Supplier-side fulfillment dashboards — see [M
 
 ## Related documents
 
-[Marketplace PRD](../06-modules/marketplace-prd.md) · [Marketplace](../03-domain/marketplace.md) · [ADR-025](../11-adr/ADR-025-marketplace-architecture.md) · [Inventory PRD](../06-modules/inventory-prd.md)
+[ROADMAP-DECISION.md](./ROADMAP-DECISION.md) · [Marketplace PRD](../06-modules/marketplace-prd.md) · [Marketplace](../03-domain/marketplace.md) · [ADR-025](../11-adr/ADR-025-marketplace-architecture.md) · [Inventory PRD](../06-modules/inventory-prd.md)

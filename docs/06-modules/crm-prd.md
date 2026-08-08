@@ -82,4 +82,4 @@ Search relevance/performance tests at realistic data volume (thousands of Custom
 
 ## 20. Future extensions
 
-Saved searches/smart lists; customer segmentation for future maintenance-reminder campaigns (ties to Property Intelligence, [Roadmap Phase 3](../13-roadmap/phase-3-property-intelligence.md)).
+Saved searches/smart lists; customer segmentation for future maintenance-reminder campaigns (ties to Property Intelligence, [Strategic Phase 2](../13-roadmap/phase-3-property-intelligence.md)).

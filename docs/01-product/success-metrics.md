@@ -18,13 +18,13 @@
 - **Dispatch accuracy**: % of Jobs completed within their scheduled window without reschedule.
 - **Technician utilization**: scheduled hours vs. available hours per Technician per week.
 
-## Property Intelligence metrics (Phase 3+, but instrumented from launch)
+## Property Intelligence metrics (Strategic Phase 2+, but instrumented from launch)
 
 - % of Jobs linked to a tracked Property (target: near 100% — an unlinked Job is a data-quality failure, not an acceptable pattern).
 - % of Jobs linked to a specific Asset where applicable.
 - Average number of historical Jobs visible to a Technician at the point of dispatch for a returning Property.
 
-These are tracked from Phase 2 onward specifically because Phase 3 features cannot be evaluated later without this baseline existing — see [Product Strategy](./product-strategy.md).
+These are tracked from launch (Strategic Phase 1) onward specifically because Strategic Phase 2 features cannot be evaluated later without this baseline existing — see [Product Strategy](./product-strategy.md).
 
 ## Retention & growth metrics
 

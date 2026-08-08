@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Cross-phase items that are documented and real, but not yet scheduled into a specific phase or sprint — tracked here so they aren't lost, and so a future planning pass has a starting point rather than needing to rediscover them from scratch.
+Cross-phase items that are documented and real, but not yet scheduled into a specific phase or sprint — tracked here so they aren't lost, and so a future planning pass has a starting point rather than needing to rediscover them from scratch. See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md) for the Strategic Product Phase / Technical Implementation Phase / Sprint numbering used throughout this document.
 
 ## Deferred from launch scope (see [Product Scope](../01-product/product-scope.md))
 
@@ -29,7 +29,7 @@ Cross-phase items that are documented and real, but not yet scheduled into a spe
 - Whether a free/forever tier exists for the smallest businesses.
 - Production domain name and branding assets.
 - External penetration test scheduling — see [Security Testing](../09-testing/security-testing.md).
-- Phase 7's data-rights/consent legal framework — see [Roadmap Phase 7](./phase-7-industry-network.md).
+- Strategic Phase 6 (Industry Data Network)'s data-rights/consent legal framework — see [Phase 7: Industry Data Network](./phase-7-industry-network.md).
 
 ## Process for pulling an item off this backlog
 
@@ -37,4 +37,4 @@ An item moves from this backlog into a specific phase/sprint only when: (1) its 
 
 ## Related documents
 
-[Implementation Roadmap](./implementation-roadmap.md) · [`DOCUMENTATION-CONSISTENCY-REPORT.md`](../DOCUMENTATION-CONSISTENCY-REPORT.md) · [Product Scope](../01-product/product-scope.md)
+[ROADMAP-DECISION.md](./ROADMAP-DECISION.md) · [Implementation Roadmap](./implementation-roadmap.md) · [`DOCUMENTATION-CONSISTENCY-REPORT.md`](../DOCUMENTATION-CONSISTENCY-REPORT.md) · [Product Scope](../01-product/product-scope.md)

@@ -1,4 +1,6 @@
-# Sprint 0: Project Setup
+# Sprint 0: Engineering Foundation
+
+> Part of Technical Implementation Phase 1 ([Phase 1: Foundation](./phase-1-foundation.md)). See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section C, for how this sprint fits into the full Sprint 0–7 MVP sequence. Next: [Sprint 1](./sprint-1.md).
 
 ## Goal
 
@@ -19,4 +21,4 @@ A trivial change (e.g., a health-check endpoint) can go from a local commit thro
 
 ## Related documents
 
-[Phase 1: Foundation](./phase-1-foundation.md) · [Project Structure](../08-engineering/project-structure.md) · [CI/CD](../10-devops/ci-cd.md)
+[ROADMAP-DECISION.md](./ROADMAP-DECISION.md) · [Phase 1: Foundation](./phase-1-foundation.md) · [Project Structure](../08-engineering/project-structure.md) · [CI/CD](../10-devops/ci-cd.md) · [Sprint 1](./sprint-1.md)

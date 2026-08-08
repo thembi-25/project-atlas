@@ -80,4 +80,4 @@ Integration tests for the replace-Asset flow (old marked removed, new created, b
 
 ## 20. Future extensions
 
-IoT telemetry integration; predicted remaining-lifespan estimates (Phase 3); barcode/QR nameplate scanning for faster data capture.
+IoT telemetry integration; predicted remaining-lifespan estimates (Strategic Phase 2); barcode/QR nameplate scanning for faster data capture.

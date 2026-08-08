@@ -16,7 +16,7 @@ Warranty status is currently tracked, if at all, on paper cards that get lost �
 
 ## 4. Non-goals
 
-- Automated manufacturer warranty registration — Phase 5, see [Manufacturers PRD](./manufacturers-prd.md).
+- Automated manufacturer warranty registration — Strategic Phase 4, see [Manufacturers PRD](./manufacturers-prd.md).
 
 ## 5. Personas
 
@@ -56,7 +56,7 @@ Warranty badge/indicator on the Asset detail page and surfaced prominently in th
 
 ## 14. Notifications
 
-Warranty expiring soon (configurable lead time, e.g., 30 days) alert to staff — relevant for proactive maintenance outreach even though full predictive maintenance is Phase 3 scope.
+Warranty expiring soon (configurable lead time, e.g., 30 days) alert to staff — relevant for proactive maintenance outreach even though full predictive maintenance is Strategic Phase 2 scope.
 
 ## 15. Audit requirements
 
@@ -80,4 +80,4 @@ Computed-status tests across the `coverage_end` boundary; claim/void action test
 
 ## 20. Future extensions
 
-Phase 5 automated registration and manufacturer-side claim submission; predictive "this asset's warranty is expiring, consider a maintenance visit" outreach (Phase 3).
+Strategic Phase 4 automated registration and manufacturer-side claim submission; predictive "this asset's warranty is expiring, consider a maintenance visit" outreach (Strategic Phase 2).

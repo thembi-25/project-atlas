@@ -1,5 +1,7 @@
 # Phase 6: Financial Services
 
+> **Technical Implementation Phase 6 of 7 — Financial Services Build.** Implements: **Strategic Product Phase 5 — Financial Services.** See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md). Does not depend on Property Intelligence, Supplier Marketplace, or Manufacturer Integrations — see Section D of that document.
+
 ## Goal
 
 Offer financial products — customer financing for larger repairs/installs, faster payouts for contractors — built on the trustworthy Job and payment history Atlas has accumulated by this point. See [Vision](../00-overview/vision.md), pillar 5.
@@ -12,7 +14,7 @@ Offer financial products — customer financing for larger repairs/installs, fas
 
 ## Dependencies
 
-Requires [Phase 2: Core Operations](./phase-2-core-operations.md) complete with sufficient job volume and payment history per Organization to underwrite responsibly — this phase is explicitly gated on data maturity, not just calendar time, per [Business Objectives](../00-overview/business-objectives.md).
+Requires Technical Implementation Phase 2 ([Phase 2: Core Operations](./phase-2-core-operations.md)) complete with sufficient job volume and payment history per Organization to underwrite responsibly, plus a live financing/payout partner — this phase is explicitly gated on data maturity and partnership readiness, not just calendar time, per [Business Objectives](../00-overview/business-objectives.md) and [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section D.
 
 ## Exit criteria
 
@@ -26,4 +28,4 @@ Atlas originating or holding loans directly — Atlas partners with licensed fin
 
 ## Related documents
 
-[Payments](../03-domain/payments.md) · [ADR-018: Payments](../11-adr/ADR-018-payments.md) · [Business Objectives](../00-overview/business-objectives.md)
+[ROADMAP-DECISION.md](./ROADMAP-DECISION.md) · [Payments](../03-domain/payments.md) · [ADR-018: Payments](../11-adr/ADR-018-payments.md) · [Business Objectives](../00-overview/business-objectives.md)

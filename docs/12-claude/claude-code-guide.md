@@ -10,7 +10,7 @@ The complete product, architecture, domain, database, API, security, engineering
 
 ## Before touching any code
 
-1. Confirm the task is in scope for the current Roadmap Phase — see [Implementation Roadmap](../13-roadmap/implementation-roadmap.md). Do not implement Phase 3+ (Property Intelligence, Marketplace, Manufacturers, Financial Services, Industry Data Network) capability while Phase 1–2 (Foundation, Core Operations) is incomplete.
+1. Confirm the task is in scope for the current Technical Implementation Phase — see [ROADMAP-DECISION.md](../13-roadmap/ROADMAP-DECISION.md) for the authoritative Strategic Product Phase / Technical Implementation Phase / Sprint distinction, and [Implementation Roadmap](../13-roadmap/implementation-roadmap.md) for the build plan. Do not implement any Strategic Phase 2+ (Property Intelligence, Marketplace, Manufacturers, Financial Services, Industry Data Network) capability while Technical Implementation Phases 1–2 (Engineering Foundation, Core Operations Build — the MVP) are incomplete.
 2. Read the relevant module PRD in [`06-modules/`](../06-modules/).
 3. Read the relevant domain model document(s) in [`03-domain/`](../03-domain/).
 4. Read any ADRs in [`11-adr/`](../11-adr/) that govern the area — check [Related Decisions](../11-adr/) links from the domain/PRD docs you just read.

@@ -22,7 +22,7 @@
 
 - Supplier Marketplace partner APIs (product catalog, order placement) — [Marketplace PRD](../06-modules/marketplace-prd.md).
 - Manufacturer partner APIs (warranty registration, product data) — [Manufacturers PRD](../06-modules/manufacturers-prd.md).
-- Financial services partner APIs (financing origination, faster-payout rails) — [Roadmap Phase 6](../13-roadmap/phase-6-financial-services.md).
+- Financial services partner APIs (financing origination, faster-payout rails) — [Strategic Phase 5](../13-roadmap/phase-6-financial-services.md).
 
 These are designed for in their respective PRDs but have no client code, credentials, or route handlers at launch.
 

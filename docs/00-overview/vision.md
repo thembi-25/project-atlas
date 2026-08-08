@@ -16,12 +16,12 @@ A scheduling app makes a technician's day easier. A **platform** makes every job
 
 Project Atlas is architected from day one so these six pillars can be built on the same domain model and database, without a rewrite:
 
-1. **Core Operations** — scheduling, dispatch, jobs, estimates, invoicing, payments. The operational backbone every field-service business needs on day one. See [Roadmap Phase 2](../13-roadmap/phase-2-core-operations.md).
-2. **Property Intelligence** — properties, buildings, rooms, and assets as durable records with full service history, enabling predictive maintenance and asset lifecycle insight. See [Roadmap Phase 3](../13-roadmap/phase-3-property-intelligence.md).
-3. **Supplier Marketplace** — connecting service businesses to parts suppliers directly inside the workflow where parts are needed. See [Roadmap Phase 4](../13-roadmap/phase-4-marketplace.md).
-4. **Manufacturer Integrations** — warranty registration, product catalogs, and installation compliance tied directly to the asset record. See [Roadmap Phase 5](../13-roadmap/phase-5-manufacturers.md).
-5. **Financial Services** — financing for customers, faster payouts for contractors, and embedded finance built on trustworthy job and payment history. See [Roadmap Phase 6](../13-roadmap/phase-6-financial-services.md).
-6. **Industry Data Network** — aggregate, de-identified data on equipment lifespan, regional service trends, and pricing that benefits every participant in the network. See [Roadmap Phase 7](../13-roadmap/phase-7-industry-network.md).
+1. **Core Operations** — scheduling, dispatch, jobs, estimates, invoicing, payments. The operational backbone every field-service business needs on day one. See [Strategic Phase 1](../13-roadmap/phase-2-core-operations.md).
+2. **Property Intelligence** — properties, buildings, rooms, and assets as durable records with full service history, enabling predictive maintenance and asset lifecycle insight. See [Strategic Phase 2](../13-roadmap/phase-3-property-intelligence.md).
+3. **Supplier Marketplace** — connecting service businesses to parts suppliers directly inside the workflow where parts are needed. See [Strategic Phase 3](../13-roadmap/phase-4-marketplace.md).
+4. **Manufacturer Integrations** — warranty registration, product catalogs, and installation compliance tied directly to the asset record. See [Strategic Phase 4](../13-roadmap/phase-5-manufacturers.md).
+5. **Financial Services** — financing for customers, faster payouts for contractors, and embedded finance built on trustworthy job and payment history. See [Strategic Phase 5](../13-roadmap/phase-6-financial-services.md).
+6. **Industry Data Network** — aggregate, de-identified data on equipment lifespan, regional service trends, and pricing that benefits every participant in the network. See [Strategic Phase 6](../13-roadmap/phase-7-industry-network.md).
 
 Every pillar depends on the one before it. We do not build pillar 3 before pillar 1 is solid — see [Implementation Roadmap](../13-roadmap/implementation-roadmap.md) for sequencing and dependencies.
 

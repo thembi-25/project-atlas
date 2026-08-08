@@ -22,7 +22,7 @@ The first-party web app (staff, Customer Portal, mobile PWA) consumes the same v
 
 ## Alternatives Considered
 
-1. **Next.js Server Actions / RPC-style internal calls, with a separate public API built later** — rejected. Historically leads to a public API that's an afterthought, poorly shaped for external consumers, and requires significant rework once third-party integration actually matters (Phase 4+). Building the real API first, and having the first-party app "eat its own dog food," ensures the API is genuinely usable from day one.
+1. **Next.js Server Actions / RPC-style internal calls, with a separate public API built later** — rejected. Historically leads to a public API that's an afterthought, poorly shaped for external consumers, and requires significant rework once third-party integration actually matters (Strategic Phase 3+). Building the real API first, and having the first-party app "eat its own dog food," ensures the API is genuinely usable from day one.
 2. **GraphQL as the API layer** — rejected; see [Architecture Principles](../02-architecture/architecture-principles.md) and the explicit anti-overengineering mandate against GraphQL absent a specific justified need (Atlas's access patterns are well-served by REST's resource-oriented model, and GraphQL's flexibility benefits are not needed for a bounded, well-understood domain).
 
 ## Consequences

@@ -15,7 +15,7 @@ Businesses currently track supplier relationships and purchase history informall
 
 ## 4. Non-goals
 
-- Live catalogs, automated ordering, or pricing integration — explicitly Phase 4 (Marketplace) scope, not built here. See [Marketplace PRD](./marketplace-prd.md).
+- Live catalogs, automated ordering, or pricing integration — explicitly Strategic Phase 3 (Marketplace) scope, not built here. See [Marketplace PRD](./marketplace-prd.md).
 
 ## 5. Personas
 
@@ -31,7 +31,7 @@ CRUD for Suppliers; basic Purchase Order creation (line items, status, received 
 
 ## 8. Business rules
 
-Full detail in [Suppliers](../03-domain/suppliers.md) — notably: launch scope is informational/manual only; automated ordering is explicitly deferred to Phase 4.
+Full detail in [Suppliers](../03-domain/suppliers.md) — notably: launch scope is informational/manual only; automated ordering is explicitly deferred to Strategic Phase 3.
 
 ## 9. State machines
 
@@ -55,7 +55,7 @@ Supplier list/detail page; simple Purchase Order list with status; "receive" act
 
 ## 14. Notifications
 
-None at launch (Purchase Order status changes are visible in-app; automated supplier-facing notifications are Phase 4 scope).
+None at launch (Purchase Order status changes are visible in-app; automated supplier-facing notifications are Strategic Phase 3 scope).
 
 ## 15. Audit requirements
 
@@ -79,4 +79,4 @@ Integration tests for PO receive-triggers-stock-movement; partial-receipt handli
 
 ## 20. Future extensions
 
-Live Supplier catalogs, pricing, and in-workflow ordering — see [Marketplace PRD](./marketplace-prd.md) and [Roadmap Phase 4](../13-roadmap/phase-4-marketplace.md).
+Live Supplier catalogs, pricing, and in-workflow ordering — see [Marketplace PRD](./marketplace-prd.md) and [Strategic Phase 3](../13-roadmap/phase-4-marketplace.md).

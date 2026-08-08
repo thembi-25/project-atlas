@@ -1,5 +1,7 @@
 # Sprint 1: Identity & Organizations
 
+> Part of Technical Implementation Phase 1 ([Phase 1: Foundation](./phase-1-foundation.md)). See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section C. Previous: [Sprint 0](./sprint-0.md). Next: [Sprint 2](./sprint-2.md).
+
 ## Goal
 
 A person can sign up, create an Organization, invite teammates with Roles, and have tenant isolation and RBAC actually enforced — the foundation every later sprint depends on.
@@ -20,4 +22,4 @@ Two separate Organizations can be created by two different Owners; each can invi
 
 ## Related documents
 
-[Phase 1: Foundation](./phase-1-foundation.md) · [Identity PRD](../06-modules/identity-prd.md) · [Organization PRD](../06-modules/organization-prd.md) · [Sprint 0](./sprint-0.md)
+[ROADMAP-DECISION.md](./ROADMAP-DECISION.md) · [Phase 1: Foundation](./phase-1-foundation.md) · [Identity PRD](../06-modules/identity-prd.md) · [Organization PRD](../06-modules/organization-prd.md) · [Sprint 0](./sprint-0.md) · [Sprint 2](./sprint-2.md)

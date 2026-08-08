@@ -22,7 +22,7 @@ Which payment processor should Atlas integrate with, and how should Atlas's data
 
 ## Alternatives Considered
 
-1. **Square** — a credible alternative, especially strong for card-present/field-service use cases; Stripe was selected for its more comprehensive API/webhook ecosystem and stronger fit for the future Marketplace/Financial Services pillars (Stripe Connect for multi-party payouts — see [Roadmap Phase 6](../13-roadmap/phase-6-financial-services.md)), which Atlas's roadmap explicitly anticipates.
+1. **Square** — a credible alternative, especially strong for card-present/field-service use cases; Stripe was selected for its more comprehensive API/webhook ecosystem and stronger fit for the future Marketplace/Financial Services pillars (Stripe Connect for multi-party payouts — see [Strategic Phase 5](../13-roadmap/phase-6-financial-services.md)), which Atlas's roadmap explicitly anticipates.
 2. **Building a direct bank/card-network integration** — rejected outright. Would place Atlas in full PCI Level 1 scope and require payment-network relationships far beyond what a platform of Atlas's stage should own.
 3. **Multiple payment processors from launch (processor abstraction layer)** — rejected as premature; a single, well-integrated processor is simpler to build, test, and reason about, with the payments code isolated enough (see [Integration Architecture](../02-architecture/integration-architecture.md)) that adding a second processor later is additive, not a rewrite.
 
@@ -43,4 +43,4 @@ Payment processing is isolated behind `packages/integrations/stripe` (see [Proje
 
 ## Related Decisions
 
-[Payments](../03-domain/payments.md) · [Payments PRD](../06-modules/payments-prd.md) · [Data Protection](../07-security/data-protection.md) · [Roadmap Phase 6](../13-roadmap/phase-6-financial-services.md)
+[Payments](../03-domain/payments.md) · [Payments PRD](../06-modules/payments-prd.md) · [Data Protection](../07-security/data-protection.md) · [Strategic Phase 5](../13-roadmap/phase-6-financial-services.md)

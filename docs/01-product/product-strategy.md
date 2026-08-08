@@ -7,10 +7,10 @@ Win the plumbing/HVAC/electrical trades segment with a genuinely complete Core O
 ## Strategic pillars and sequencing rationale
 
 1. **Core Operations must be undeniably better than a whiteboard and a spreadsheet**, not just "as good as" incumbent FSM tools. Feature parity is not the bar; removing the office's daily manual reconciliation work is.
-2. **Property Intelligence only has value once there's real job history to mine.** An empty asset record is worthless. We therefore treat Phase 2 (Core Operations) as also seeding Phase 3's data requirements — Jobs must always be able to link to Assets/Properties even before Property Intelligence features exist. See [Assets](../03-domain/assets.md).
-3. **Marketplace and Manufacturer Integrations require trust with third parties**, which requires a credible base of active organizations transacting jobs. These pillars are commercially and technically premature before Phase 2 is stable in production. See [Roadmap Phase 4](../13-roadmap/phase-4-marketplace.md), [Roadmap Phase 5](../13-roadmap/phase-5-manufacturers.md).
-4. **Financial Services requires underwritable history** (job volume, payment reliability) that only exists after real usage. See [Roadmap Phase 6](../13-roadmap/phase-6-financial-services.md).
-5. **Industry Data Network is the most compliance-sensitive pillar** (aggregated customer/property data) and is deliberately last, pending an explicit data-rights and consent framework. See [Roadmap Phase 7](../13-roadmap/phase-7-industry-network.md).
+2. **Property Intelligence only has value once there's real job history to mine.** An empty asset record is worthless. We therefore treat Phase 2 (Core Operations) as also seeding Strategic Phase 2's data requirements — Jobs must always be able to link to Assets/Properties even before Property Intelligence features exist. See [Assets](../03-domain/assets.md).
+3. **Marketplace and Manufacturer Integrations require trust with third parties**, which requires a credible base of active organizations transacting jobs. These pillars are commercially and technically premature before Phase 2 is stable in production. See [Strategic Phase 3](../13-roadmap/phase-4-marketplace.md), [Strategic Phase 4](../13-roadmap/phase-5-manufacturers.md).
+4. **Financial Services requires underwritable history** (job volume, payment reliability) that only exists after real usage. See [Strategic Phase 5](../13-roadmap/phase-6-financial-services.md).
+5. **Industry Data Network is the most compliance-sensitive pillar** (aggregated customer/property data) and is deliberately last, pending an explicit data-rights and consent framework. See [Strategic Phase 6](../13-roadmap/phase-7-industry-network.md).
 
 ## Build vs. buy strategy
 
