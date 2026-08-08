@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "extends": ["../config/eslint-base.js"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["dist", "node_modules"],
+  "overrides": [
+    {
+      "files": ["src/check-connection.ts", "src/migrate.ts"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}

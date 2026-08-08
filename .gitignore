@@ -1,0 +1,45 @@
+# Secrets — never committed
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Dependencies
+node_modules
+.pnpm-store
+
+# Next.js
+.next/
+out/
+
+# Build outputs
+dist/
+build/
+
+# Turborepo
+.turbo
+
+# Testing
+coverage/
+
+# Supabase local
+supabase/.branches
+supabase/.temp
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Misc
+*.tsbuildinfo
+.eslintcache
