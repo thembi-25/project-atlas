@@ -16,6 +16,7 @@ project-atlas/
 │   ├── database/               # Drizzle schema, migrations, typed client (@atlas/database)
 │   ├── ui/                     # shared shadcn/ui-based component library (@atlas/ui)
 │   ├── auth/                   # Supabase Auth client foundation only — no RBAC (@atlas/auth)
+│   ├── identity/                # Users, Memberships, Roles/Permissions, Organizations, Teams (@atlas/identity) — Sprint 1
 │   ├── crm/                    # customers, contacts — EMPTY until Sprint 2 (@atlas/crm)
 │   ├── properties/             # properties, buildings, rooms — EMPTY until Sprint 3 (@atlas/properties)
 │   ├── assets/                 # installed equipment, warranties — EMPTY until Sprint 3 (@atlas/assets)

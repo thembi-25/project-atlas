@@ -2,7 +2,7 @@
 
 > Part of Technical Implementation Phase 1 ([Phase 1: Foundation](./phase-1-foundation.md)). See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section C, for how this sprint fits into the full Sprint 0–7 MVP sequence. Next: [Sprint 1](./sprint-1.md).
 >
-> **Status: Partial — see [SPRINT-0-COMPLETION-REPORT.md](./SPRINT-0-COMPLETION-REPORT.md).** The engineering foundation (monorepo, CI, testing, linting, environment validation, logging, error handling) is built and verified. Live Supabase/PostgreSQL connectivity is not yet verified — no Docker daemon or provisioned Supabase project was available in the environment that implemented this sprint. A human must resolve this before Sprint 1's first migration.
+> **Status: Complete — see [SPRINT-0-COMPLETION-REPORT.md](./SPRINT-0-COMPLETION-REPORT.md).** The engineering foundation (monorepo, CI, testing, linting, environment validation, logging, error handling) is built and verified. The codebase is connected to the real "Atlas Project" Supabase project; live connectivity is confirmed via the Supabase Management API. Sprint 1 has begun.
 
 ## Goal
 

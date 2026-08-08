@@ -1,6 +1,8 @@
 # Sprint 1: Identity & Organizations
 
 > Part of Technical Implementation Phase 1 ([Phase 1: Foundation](./phase-1-foundation.md)). See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section C. Previous: [Sprint 0](./sprint-0.md). Next: [Sprint 2](./sprint-2.md).
+>
+> **Status: Complete — see [SPRINT-1-COMPLETION-REPORT.md](./SPRINT-1-COMPLETION-REPORT.md).** Schema, RLS, audit triggers, and seed data are live on the real Supabase project; `@atlas/identity` and the `/api/v1/` routes implement every deliverable below. Integration tests are written and real but could not be executed in the sandboxed environment that wrote them (raw-TCP Postgres is not reachable there) — see the completion report's "Known Issues."
 
 ## Goal
 

@@ -13,7 +13,7 @@ import * as schema from './schema';
  * docs/02-architecture/container-architecture.md, "Communication patterns".
  */
 export function createDatabaseClient(databaseUrl: string) {
-  const client = postgres(databaseUrl, { max: 10 });
+  const client = postgres(databaseUrl, { max: 10, connect_timeout: 10 });
   return drizzle(client, { schema });
 }
 

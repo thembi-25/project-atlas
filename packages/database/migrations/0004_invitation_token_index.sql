@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS "idx_organization_memberships_invitation_token_hash" ON "identity"."organization_memberships" USING btree ("invitation_token_hash");

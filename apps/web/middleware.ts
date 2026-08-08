@@ -6,10 +6,14 @@ import { REQUEST_ID_HEADER, resolveRequestId } from '@/lib/request-id';
  * every response — see docs/07-security/api-security.md, "Security
  * headers", and docs/10-devops/logging.md, "Correlation".
  *
- * Session/auth handling (resolving the current Supabase session) is
- * deliberately NOT implemented here yet — full authentication middleware
- * is Sprint 1 (Identity & Organizations) scope, once there is a session to
- * resolve and Memberships to check. See docs/13-roadmap/sprint-1.md.
+ * Session/auth resolution itself deliberately stays out of this file:
+ * Next.js middleware runs on the Edge runtime by default, where
+ * `@atlas/database`'s `postgres` (TCP) driver cannot run — see
+ * docs/02-architecture/container-architecture.md. Each `/api/v1/` route
+ * handler resolves its own session via `apps/web/lib/session.ts`
+ * (`getAuthenticatedUser`), which runs in the Node.js runtime alongside
+ * the Drizzle client it needs for RLS-scoped queries — see
+ * docs/13-roadmap/sprint-1.md.
  */
 export function middleware(request: NextRequest): NextResponse {
   const requestId = resolveRequestId(request.headers);
