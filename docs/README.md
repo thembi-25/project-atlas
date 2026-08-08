@@ -42,7 +42,7 @@ Project Atlas is a vertical Industry Cloud Platform for field-service trades, la
 
 - Every PRD in `06-modules/` follows a fixed 20-section template (Purpose through Future Extensions).
 - Every ADR in `11-adr/` follows the standard ADR template (Status, Context, Decision, Alternatives, Consequences, Risks, Migration/Rollback, Related Decisions).
-- Cross-references use relative Markdown links, e.g. `[Property Domain](../03-domain/properties.md)`.
+- Cross-references use relative Markdown links, e.g. a document inside `06-modules/` linking to Properties would use `[Property Domain](../03-domain/properties.md)`.
 - Terminology is centralized in [`00-overview/terminology.md`](./00-overview/terminology.md) — use those terms consistently; do not introduce synonyms.
 - Diagrams use [Mermaid](https://mermaid.js.org/) and are included only where they communicate real architecture, not decoration.
 
