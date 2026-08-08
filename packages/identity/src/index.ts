@@ -70,7 +70,10 @@ export { findOrganizationById } from './infrastructure/organizations';
 export {
   listMembershipsForOrganization,
   findMembershipById,
+  findActiveMembershipByOrgAndUser,
   listRoleNamesForMembership,
 } from './infrastructure/memberships';
 export { listTeamsForOrganization, findTeamById } from './infrastructure/teams';
 export { listRoles } from './infrastructure/roles';
+export { hasPermission } from './infrastructure/permissions';
+export type { HasPermissionParams } from './infrastructure/permissions';

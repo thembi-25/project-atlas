@@ -10,14 +10,17 @@
     "lint": "next lint --max-warnings 0",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "test:integration": "vitest run --config vitest.integration.config.ts"
   },
   "dependencies": {
     "@atlas/auth": "workspace:*",
     "@atlas/config": "workspace:*",
+    "@atlas/crm": "workspace:*",
     "@atlas/database": "workspace:*",
     "@atlas/identity": "workspace:*",
     "@atlas/ui": "workspace:*",
+    "drizzle-orm": "^0.36.1",
     "next": "14.2.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

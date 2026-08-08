@@ -1,6 +1,8 @@
 # Sprint 2: CRM & Customers
 
 > Part of Technical Implementation Phase 2 ([Phase 2: Core Operations](./phase-2-core-operations.md) — implements Strategic Product Phase 1: Core Operations). See [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section C. Previous: [Sprint 1](./sprint-1.md). Next: Sprint 3 — Properties & Assets (see [ROADMAP-DECISION.md](./ROADMAP-DECISION.md), Section C.1).
+>
+> **Status: Complete — see [SPRINT-2-COMPLETION-REPORT.md](./SPRINT-2-COMPLETION-REPORT.md).** `customers`/`contacts` are live with RLS, permission-gated authorization, search, and cursor pagination; `@atlas/crm` and the `/api/v1/customers*` routes implement every deliverable below except `property_customer_associations`/`GET .../properties` (deferred — Properties doesn't exist yet, per the completion report's "Deviations"). Integration/API tests are written and real but could not be executed in the sandboxed environment that wrote them — see the completion report's "Known Limitations."
 
 ## Goal
 

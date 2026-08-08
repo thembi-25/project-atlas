@@ -1,0 +1,11 @@
+-- Fix for a finding reported by Supabase's security advisor immediately
+-- after 0005-0007 were applied — see SPRINT-2-COMPLETION-REPORT.md,
+-- "Security Findings."
+--
+-- extension_in_public (warn): 0006_crm_rls_search_and_audit.sql's
+-- `CREATE EXTENSION IF NOT EXISTS pg_trgm;` installed into the `public`
+-- schema (Postgres's default when no schema is given), unlike Sprint 1's
+-- pgcrypto/uuid-ossp which landed in `extensions`. Moving it there for
+-- consistency and to keep `public` free of extension objects, per
+-- Supabase's own linter guidance.
+ALTER EXTENSION pg_trgm SET SCHEMA extensions;
