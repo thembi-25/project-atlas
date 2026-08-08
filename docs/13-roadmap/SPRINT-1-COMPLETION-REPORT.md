@@ -79,6 +79,12 @@ These could not be executed here for the same reason `pnpm db:check` cannot (see
 - `audit_events`: `UPDATE`/`DELETE` explicitly revoked from `authenticated` and `anon` — append-only, matching docs/04-database/audit-logging.md, "not even for Owner/Admin-level application logic."
 - Service-role key and `DATABASE_URL` remain only in the gitignored `.env.local`; `git status`/`git ls-files` confirm neither is tracked.
 
+## Security Incident: real Supabase keys committed to `.env.example`
+
+While pushing this sprint's work, `git push` was rejected because two commits (`db14e94`, `7050ff7`, "Update .env.example") had landed on the remote branch that I did not make. They replaced `.env.example`'s placeholder `NEXT_PUBLIC_SUPABASE_ANON_KEY`/`SUPABASE_SERVICE_ROLE_KEY` values with the real keys for the Atlas Project — including the service-role key, which bypasses RLS entirely. `.env.example` is a template meant to be committed, so this put a live, full-access credential into git history in plaintext.
+
+I flagged this to the user before merging or pushing anything further. Per their direction, I stripped the real values back to placeholders in a follow-up commit (`e85ceb4`) but did **not** rotate the key — that decision was deferred. **The service-role key currently in `.env.local` and in that git history should still be treated as compromised and rotated in the Supabase dashboard (Project Settings → API → regenerate `service_role`) before this project is treated as production-ready**, since it now exists in this branch's history regardless of the working-tree fix.
+
 ## Known Issues
 
 1. **Integration tests could not be executed in this sandbox** — same root cause as Sprint 0's Known Issue #1/#2 (now resolved for connectivity in general, but the *sandbox itself* still cannot open raw-TCP Postgres connections; only the Supabase Management API, which is HTTPS, works from here). Confirmed directly this sprint (see "Testing"). Not a defect in the tests or the schema — verified structurally instead, and ready to run wherever raw Postgres connectivity exists.
