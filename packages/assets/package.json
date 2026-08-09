@@ -2,7 +2,7 @@
   "name": "@atlas/assets",
   "version": "0.0.0",
   "private": true,
-  "description": "Asset (installed equipment) domain module for Project Atlas. EMPTY SCAFFOLD as of Sprint 0 (Engineering Foundation) \u2014 implementation begins in Sprint 3 \u2014 Properties & Assets.",
+  "description": "Asset (installed equipment) domain module for Project Atlas. Implemented in Sprint 3 \u2014 Properties & Assets. See docs/13-roadmap/sprint-3.md, docs/03-domain/assets.md.",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {
@@ -12,11 +12,17 @@
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "test:integration": "vitest run --config vitest.integration.config.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@atlas/database": "workspace:*",
+    "@atlas/identity": "workspace:*",
+    "drizzle-orm": "^0.36.1"
+  },
   "devDependencies": {
     "@atlas/config": "workspace:*",
+    "@atlas/properties": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
     "@typescript-eslint/parser": "^8.11.0",
     "eslint": "^8.57.1",

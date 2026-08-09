@@ -14,3 +14,4 @@ export * from './identity';
 export * from './org';
 export * from './platform';
 export * from './crm';
+export * from './properties';

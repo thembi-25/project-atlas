@@ -14,11 +14,13 @@
     "test:integration": "vitest run --config vitest.integration.config.ts"
   },
   "dependencies": {
+    "@atlas/assets": "workspace:*",
     "@atlas/auth": "workspace:*",
     "@atlas/config": "workspace:*",
     "@atlas/crm": "workspace:*",
     "@atlas/database": "workspace:*",
     "@atlas/identity": "workspace:*",
+    "@atlas/properties": "workspace:*",
     "@atlas/ui": "workspace:*",
     "drizzle-orm": "^0.36.1",
     "next": "14.2.15",

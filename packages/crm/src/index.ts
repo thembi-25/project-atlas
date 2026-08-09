@@ -62,6 +62,7 @@ export type {
   ArchiveContactParams,
   RestoreContactParams,
 } from './application/manage-contact';
+export { findCustomerForOrganization } from './application/verify-customer';
 
 // Infrastructure types (read-only shapes useful to route handlers building responses)
 export type {

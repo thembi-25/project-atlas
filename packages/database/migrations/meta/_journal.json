@@ -64,6 +64,48 @@
       "when": 1786174458906,
       "tag": "0008_crm_security_advisor_fixes",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1786188894844,
+      "tag": "0009_properties_and_assets",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1786188957489,
+      "tag": "0010_properties_rls_search_and_audit",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1786189060830,
+      "tag": "0011_properties_technician_assets_write",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1786189194117,
+      "tag": "0012_fix_uuid_generate_v7_search_path",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1786189200000,
+      "tag": "0013_properties_seed_asset_types",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1786189300000,
+      "tag": "0014_properties_security_advisor_fixes",
+      "breakpoints": true
     }
   ]
 }

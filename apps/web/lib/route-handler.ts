@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { AppError, toApiErrorBody, toAppError } from './errors';
 import { mapIdentityError } from './identity-errors';
 import { mapCrmError } from './crm-errors';
+import { mapPropertiesError } from './properties-errors';
+import { mapAssetsError } from './assets-errors';
 import { getServerEnv } from './env';
 import { logger } from './logger';
 import { REQUEST_ID_HEADER, resolveRequestId } from './request-id';
@@ -31,7 +33,11 @@ export function withApiHandler<T, C = undefined>(
       });
     } catch (rawError) {
       const error: AppError =
-        mapIdentityError(rawError) ?? mapCrmError(rawError) ?? toAppError(rawError);
+        mapIdentityError(rawError) ??
+        mapCrmError(rawError) ??
+        mapPropertiesError(rawError) ??
+        mapAssetsError(rawError) ??
+        toAppError(rawError);
 
       if (error.code === 'internal_error') {
         log.error('Unhandled route error', {
