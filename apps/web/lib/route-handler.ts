@@ -4,6 +4,8 @@ import { mapIdentityError } from './identity-errors';
 import { mapCrmError } from './crm-errors';
 import { mapPropertiesError } from './properties-errors';
 import { mapAssetsError } from './assets-errors';
+import { mapJobsError } from './jobs-errors';
+import { mapSchedulingError } from './scheduling-errors';
 import { getServerEnv } from './env';
 import { logger } from './logger';
 import { REQUEST_ID_HEADER, resolveRequestId } from './request-id';
@@ -37,6 +39,8 @@ export function withApiHandler<T, C = undefined>(
         mapCrmError(rawError) ??
         mapPropertiesError(rawError) ??
         mapAssetsError(rawError) ??
+        mapJobsError(rawError) ??
+        mapSchedulingError(rawError) ??
         toAppError(rawError);
 
       if (error.code === 'internal_error') {

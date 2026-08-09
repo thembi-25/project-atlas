@@ -2,7 +2,7 @@
   "name": "@atlas/jobs",
   "version": "0.0.0",
   "private": true,
-  "description": "Jobs and Tasks domain module for Project Atlas. EMPTY SCAFFOLD as of Sprint 0 (Engineering Foundation) \u2014 implementation begins in Sprint 4 \u2014 Jobs, Scheduling & Dispatch.",
+  "description": "Jobs and Tasks domain module for Project Atlas. Implemented in Sprint 4 — Jobs, Scheduling & Dispatch. See docs/13-roadmap/sprint-4.md, docs/03-domain/jobs.md, docs/03-domain/tasks.md.",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {
@@ -12,9 +12,17 @@
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "test:integration": "vitest run --config vitest.integration.config.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@atlas/assets": "workspace:*",
+    "@atlas/crm": "workspace:*",
+    "@atlas/database": "workspace:*",
+    "@atlas/identity": "workspace:*",
+    "@atlas/properties": "workspace:*",
+    "drizzle-orm": "^0.36.1"
+  },
   "devDependencies": {
     "@atlas/config": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^8.11.0",

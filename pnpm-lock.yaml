@@ -41,9 +41,15 @@ importers:
       '@atlas/identity':
         specifier: workspace:*
         version: link:../../packages/identity
+      '@atlas/jobs':
+        specifier: workspace:*
+        version: link:../../packages/jobs
       '@atlas/properties':
         specifier: workspace:*
         version: link:../../packages/properties
+      '@atlas/scheduling':
+        specifier: workspace:*
+        version: link:../../packages/scheduling
       '@atlas/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -417,6 +423,25 @@ importers:
         version: 2.1.9(@types/node@20.19.43)
 
   packages/jobs:
+    dependencies:
+      '@atlas/assets':
+        specifier: workspace:*
+        version: link:../assets
+      '@atlas/crm':
+        specifier: workspace:*
+        version: link:../crm
+      '@atlas/database':
+        specifier: workspace:*
+        version: link:../database
+      '@atlas/identity':
+        specifier: workspace:*
+        version: link:../identity
+      '@atlas/properties':
+        specifier: workspace:*
+        version: link:../properties
+      drizzle-orm:
+        specifier: ^0.36.1
+        version: 0.36.4(@types/react@18.3.31)(pg@8.22.0)(postgres@3.4.9)(react@18.3.1)
     devDependencies:
       '@atlas/config':
         specifier: workspace:*
@@ -502,10 +527,29 @@ importers:
         version: 2.1.9(@types/node@20.19.43)
 
   packages/scheduling:
+    dependencies:
+      '@atlas/database':
+        specifier: workspace:*
+        version: link:../database
+      '@atlas/identity':
+        specifier: workspace:*
+        version: link:../identity
+      '@atlas/jobs':
+        specifier: workspace:*
+        version: link:../jobs
+      drizzle-orm:
+        specifier: ^0.36.1
+        version: 0.36.4(@types/react@18.3.31)(pg@8.22.0)(postgres@3.4.9)(react@18.3.1)
     devDependencies:
       '@atlas/config':
         specifier: workspace:*
         version: link:../config
+      '@atlas/crm':
+        specifier: workspace:*
+        version: link:../crm
+      '@atlas/properties':
+        specifier: workspace:*
+        version: link:../properties
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.11.0
         version: 8.66.0(@typescript-eslint/parser@8.66.0(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)

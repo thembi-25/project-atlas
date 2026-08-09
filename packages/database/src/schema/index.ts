@@ -15,3 +15,4 @@ export * from './org';
 export * from './platform';
 export * from './crm';
 export * from './properties';
+export * from './jobs';

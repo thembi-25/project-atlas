@@ -50,6 +50,7 @@ export type {
 } from './application/manage-asset';
 export { listAssetTypes } from './application/list-asset-types';
 export type { ListAssetTypesParams } from './application/list-asset-types';
+export { findAssetForOrganization } from './application/verify-asset';
 
 // Infrastructure types (read-only shapes useful to route handlers building responses)
 export type {

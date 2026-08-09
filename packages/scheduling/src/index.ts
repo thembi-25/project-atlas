@@ -1,17 +1,56 @@
 /**
- * Scheduling and Dispatch domain module for Project Atlas.
+ * Scheduling & Dispatch domain module. See docs/13-roadmap/sprint-4.md,
+ * docs/03-domain/scheduling.md, docs/03-domain/dispatch.md,
+ * docs/06-modules/scheduling-prd.md, docs/06-modules/dispatch-prd.md.
  *
- * EMPTY SCAFFOLD — Sprint 0 (Engineering Foundation) creates this package's
- * workspace boundary only. No domain logic, tables, or business rules are
- * implemented here yet, per docs/13-roadmap/ROADMAP-DECISION.md and the
- * Sprint 0 instruction not to implement customer-facing features ahead of
- * their owning sprint.
+ * Other packages/apps import only from here, never from
+ * src/{domain,application,infrastructure}/* directly — see
+ * docs/08-engineering/project-structure.md, "Rule: no cross-package deep
+ * imports."
  *
- * Implementation begins in: Sprint 4 — Jobs, Scheduling & Dispatch
- *
- * Governing documentation:
- * - docs/03-domain/scheduling.md
- * - docs/03-domain/dispatch.md
+ * Architecture note: this package's infrastructure/application layers
+ * query `jobs.jobs` directly (via @atlas/jobs's exported
+ * `findJobById`/`isUserAssignedToJob`/`transitionJobStatusInTx`) rather
+ * than treating Jobs as an arm's-length external module. See
+ * @atlas/properties's index.ts and @atlas/jobs's index.ts for the full
+ * "two packages, one architectural module" reasoning this mirrors.
  */
 
-export {};
+// Domain
+export {
+  NotFoundError,
+  ForbiddenError,
+  InvalidScheduleWindowError,
+  JobNotSchedulableError,
+  RescheduleReasonRequiredError,
+  JobNotDispatchableError,
+} from './domain/errors';
+export { windowsOverlap } from './domain/conflict-detection';
+
+// Application use cases
+export { scheduleJob } from './application/schedule-job';
+export type { ScheduleJobParams, ScheduleJobResult } from './application/schedule-job';
+export { rescheduleJob } from './application/reschedule-job';
+export type { RescheduleJobParams, RescheduleJobResult } from './application/reschedule-job';
+export { dispatchJob } from './application/dispatch-job';
+export type { DispatchJobParams, DispatchJobResult } from './application/dispatch-job';
+export { acknowledgeDispatch, markEnRoute, markArrived } from './application/acknowledge-dispatch';
+export type { RecordDispatchTimestampParams } from './application/acknowledge-dispatch';
+export { listSchedule, getJobSchedule, getConflicts } from './application/list-schedule';
+export type {
+  ListScheduleParams,
+  GetJobScheduleParams,
+  GetConflictsParams,
+} from './application/list-schedule';
+export { requireSchedulingPermission } from './application/authorize';
+
+// Infrastructure types (read-only shapes useful to route handlers building responses)
+export type { ScheduleEvent } from './infrastructure/schedule-events';
+export type { ScheduleEventAssignment } from './infrastructure/schedule-events';
+export type { ScheduleEventHistoryEntry, ScheduleConflict } from './infrastructure/schedule-events';
+export {
+  listScheduleEventAssignments,
+  listScheduleEventHistory,
+} from './infrastructure/schedule-events';
+export type { DispatchEvent } from './infrastructure/dispatch-events';
+export { listDispatchEventsForJob } from './infrastructure/dispatch-events';

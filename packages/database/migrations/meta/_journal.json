@@ -106,6 +106,41 @@
       "when": 1786189300000,
       "tag": "0014_properties_security_advisor_fixes",
       "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1786238112514,
+      "tag": "0015_jobs_scheduling_dispatch",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1786238113514,
+      "tag": "0016_jobs_permissions",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1786238114514,
+      "tag": "0017_jobs_rls_search_and_audit",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1786238115514,
+      "tag": "0018_jobs_seed_job_types_and_service_categories",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1786238116514,
+      "tag": "0019_jobs_security_advisor_fixes",
+      "breakpoints": true
     }
   ]
 }
