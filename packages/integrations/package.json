@@ -1,0 +1,29 @@
+{
+  "name": "@atlas/integrations",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Third-party integration clients, isolated from domain packages. Currently: Stripe (ADR-018). Flat single package per docs/08-engineering/project-structure.md's precedent, not a nested per-integration package — a second integration (e.g. QuickBooks, Sprint 7) adds a sibling src/ subdirectory, not a new workspace package.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "stripe": "^17.7.0"
+  },
+  "devDependencies": {
+    "@atlas/config": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^8.11.0",
+    "@typescript-eslint/parser": "^8.11.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
+  }
+}

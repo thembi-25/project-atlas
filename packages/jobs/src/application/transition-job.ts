@@ -1,4 +1,4 @@
-import { withRequestContext, type DatabaseClient } from '@atlas/database';
+import { recordDomainEvent, withRequestContext, type DatabaseClient } from '@atlas/database';
 import { findActiveMembershipByOrgAndUser, hasPermission } from '@atlas/identity';
 import { canTransitionJobStatus, type JobStatus } from '../domain/lifecycle';
 import {
@@ -185,6 +185,12 @@ export interface CompleteJobParams {
  * be marked completed while it has any required Task incomplete."
  * Technician-assigned-scoped, per jobs-prd.md's acceptance criterion
  * (a Technician executing the Job is exactly who completes it).
+ *
+ * Emits `job.completed` to the transactional outbox (ADR-011) in the
+ * same transaction as the status write — Sprint 5's Worker consumes this
+ * to auto-generate a draft Invoice when the Job has an approved Estimate.
+ * See docs/02-architecture/event-driven-architecture.md's event catalog
+ * and docs/13-roadmap/sprint-5.md.
  */
 export async function completeJob(db: DatabaseClient, params: CompleteJobParams): Promise<Job> {
   return withRequestContext(db, params.actorUserId, async (tx) => {
@@ -197,7 +203,17 @@ export async function completeJob(db: DatabaseClient, params: CompleteJobParams)
     if (incomplete.length > 0) {
       throw new IncompleteRequiredTasksError(incomplete.map((t) => t.label));
     }
-    return transitionJobStatusScopedInTx(tx, { ...params, toStatus: 'completed' });
+    const updated = await transitionJobStatusScopedInTx(tx, { ...params, toStatus: 'completed' });
+
+    await recordDomainEvent(tx, {
+      organizationId: params.organizationId,
+      eventType: 'job.completed',
+      entityType: 'jobs.jobs',
+      entityId: updated.id,
+      payload: { jobId: updated.id, customerId: updated.customerId },
+    });
+
+    return updated;
   });
 }
 

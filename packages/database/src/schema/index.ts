@@ -16,3 +16,4 @@ export * from './platform';
 export * from './crm';
 export * from './properties';
 export * from './jobs';
+export * from './financials';

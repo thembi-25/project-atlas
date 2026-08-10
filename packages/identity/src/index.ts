@@ -77,3 +77,10 @@ export { listTeamsForOrganization, findTeamById } from './infrastructure/teams';
 export { listRoles } from './infrastructure/roles';
 export { hasPermission } from './infrastructure/permissions';
 export type { HasPermissionParams } from './infrastructure/permissions';
+/**
+ * Cross-module write for the Customer Portal (Sprint 5): a Contact's
+ * Portal identity is the same `identity.users` primitive as a staff
+ * User's — see `packages/crm/src/application/portal-auth.ts`, which is
+ * the first caller of this function from outside @atlas/identity itself.
+ */
+export { upsertUserFromAuth } from './infrastructure/users';

@@ -141,6 +141,34 @@
       "when": 1786238116514,
       "tag": "0019_jobs_security_advisor_fixes",
       "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1786242148890,
+      "tag": "0020_financials_estimates_invoices_payments",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "7",
+      "when": 1786242149890,
+      "tag": "0021_financials_rls_search_and_audit",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "7",
+      "when": 1786242150890,
+      "tag": "0022_financials_payment_sum_check",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "7",
+      "when": 1786242151890,
+      "tag": "0023_financials_security_advisor_fixes",
+      "breakpoints": true
     }
   ]
 }

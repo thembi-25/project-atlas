@@ -16,6 +16,9 @@
   "dependencies": {
     "@atlas/config": "workspace:*",
     "@atlas/database": "workspace:*",
+    "@atlas/financials": "workspace:*",
+    "@atlas/integrations": "workspace:*",
+    "drizzle-orm": "^0.36.1",
     "pg-boss": "^10.1.5"
   },
   "devDependencies": {

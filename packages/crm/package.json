@@ -16,6 +16,7 @@
     "test:integration": "vitest run --config vitest.integration.config.ts"
   },
   "dependencies": {
+    "@atlas/auth": "workspace:*",
     "@atlas/database": "workspace:*",
     "@atlas/identity": "workspace:*",
     "drizzle-orm": "^0.36.1"

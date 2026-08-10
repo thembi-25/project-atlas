@@ -65,6 +65,30 @@ export type {
 export { findCustomerForOrganization } from './application/verify-customer';
 export { findContactForOrganization } from './application/verify-contact';
 
+// Customer Portal (Sprint 5) cross-module reads — see
+// packages/crm/src/infrastructure/contacts.ts for the full rationale on
+// each.
+export {
+  findPortalContactsByEmail,
+  linkContactPortalUser,
+  findContactByPortalUserAndCustomer,
+  listContactsByPortalUserId,
+} from './infrastructure/contacts';
+
+// Customer Portal (Sprint 5) auth application layer.
+export {
+  requestPortalMagicLink,
+  completePortalLogin,
+  getPortalContacts,
+} from './application/portal-auth';
+export type {
+  PortalMagicLinkNotifier,
+  RequestPortalMagicLinkParams,
+  CompletePortalLoginParams,
+  CompletePortalLoginResult,
+  GetPortalContactsParams,
+} from './application/portal-auth';
+
 // Infrastructure types (read-only shapes useful to route handlers building responses)
 export type {
   Customer,

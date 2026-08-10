@@ -1,6 +1,7 @@
 import { sql } from 'drizzle-orm';
 import { boolean, pgSchema, text, timestamp, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
 import { organizations } from './org';
+import { users } from './identity';
 
 /**
  * CRM domain: Customers and Contacts — the operational customer record.
@@ -75,12 +76,15 @@ export const customers = crmSchema.table('customers', {
  * an extra join. The application layer always derives this value from the
  * looked-up parent Customer row, never from client input directly.
  *
- * `portal_user_id` (a link to a Customer Portal authentication identity)
- * is deliberately omitted: the Customer Portal PRD's identity model is a
- * separate, not-yet-built module, and docs/04-database/foreign-keys.md
- * requires every foreign key to be a real, enforced constraint — there is
- * no table yet to reference. `portal_access_enabled` (the flag) is
- * implemented; the portal identity link is deferred to that module.
+ * `portal_user_id` (added in Sprint 5) links a Contact to the
+ * `identity.users` row created for it on first successful Customer Portal
+ * magic-link verification — see docs/06-modules/customer-portal-prd.md and
+ * docs/13-roadmap/sprint-5.md. Nullable: unset until that first login.
+ * Deliberately not unique — the same person's email can be a Contact for
+ * more than one Organization, and each of those Contact rows links to the
+ * same `identity.users.id` (the Portal's RLS policy,
+ * `contacts.portal_user_id = auth.uid()`, is what scopes visibility per
+ * row, not a 1:1 constraint on this column).
  */
 export const contacts = crmSchema.table(
   'contacts',
@@ -100,6 +104,7 @@ export const contacts = crmSchema.table(
     roleTitle: text('role_title'),
     isPrimary: boolean('is_primary').notNull().default(false),
     portalAccessEnabled: boolean('portal_access_enabled').notNull().default(false),
+    portalUserId: uuid('portal_user_id').references(() => users.id),
     deletedAt: timestamp('deleted_at', { withTimezone: true }),
     createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
     updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),

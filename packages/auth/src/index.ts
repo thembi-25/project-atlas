@@ -9,3 +9,7 @@
 export { createSupabaseServerClient } from './server-client';
 export { createSupabaseBrowserClient } from './browser-client';
 export type { CookieAdapter, SupabaseConnectionConfig } from './types';
+export { getSupabaseAdminClient, resetSupabaseAdminClientForTests } from './admin-client';
+export type { SupabaseAdminConnectionConfig } from './admin-client';
+export { generatePortalMagicLink } from './portal-magic-link';
+export type { PortalMagicLink } from './portal-magic-link';

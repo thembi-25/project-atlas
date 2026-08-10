@@ -167,3 +167,77 @@ export async function countActiveContactsForCustomer(
     .where(and(eq(schema.contacts.customerId, customerId), isNull(schema.contacts.deletedAt)));
   return rows.length;
 }
+
+/**
+ * Sprint 5 (Customer Portal): every portal-access-enabled Contact row
+ * matching this email, across every Organization — a person can be a
+ * Contact for more than one Organization under the same email, and the
+ * Portal's magic-link request step (docs/13-roadmap/sprint-5.md) must
+ * discover all of them, not just one.
+ */
+export async function findPortalContactsByEmail(
+  tx: DatabaseClient,
+  email: string,
+): Promise<Contact[]> {
+  return tx
+    .select()
+    .from(schema.contacts)
+    .where(
+      and(
+        eq(schema.contacts.email, email),
+        eq(schema.contacts.portalAccessEnabled, true),
+        isNull(schema.contacts.deletedAt),
+      ),
+    );
+}
+
+/** Links a Contact to its Portal authentication identity on first successful magic-link verification — see @atlas/database's `withServiceContext` usage in the Portal auth application layer. */
+export async function linkContactPortalUser(
+  tx: DatabaseClient,
+  contactId: string,
+  portalUserId: string,
+): Promise<Contact | undefined> {
+  const [contact] = await tx
+    .update(schema.contacts)
+    .set({ portalUserId, updatedAt: new Date() })
+    .where(eq(schema.contacts.id, contactId))
+    .returning();
+  return contact;
+}
+
+/** The Contact identity behind a Portal session, scoped to one Customer — used to verify a Portal actor's Estimate/Invoice/Payment access before a `withServiceContext` write. */
+export async function findContactByPortalUserAndCustomer(
+  tx: DatabaseClient,
+  params: { portalUserId: string; customerId: string },
+): Promise<Contact | undefined> {
+  const [contact] = await tx
+    .select()
+    .from(schema.contacts)
+    .where(
+      and(
+        eq(schema.contacts.portalUserId, params.portalUserId),
+        eq(schema.contacts.customerId, params.customerId),
+        eq(schema.contacts.portalAccessEnabled, true),
+        isNull(schema.contacts.deletedAt),
+      ),
+    )
+    .limit(1);
+  return contact;
+}
+
+/** Every Contact (across Organizations) linked to this Portal user — used to resolve "which Customers can this Portal session see." */
+export async function listContactsByPortalUserId(
+  tx: DatabaseClient,
+  portalUserId: string,
+): Promise<Contact[]> {
+  return tx
+    .select()
+    .from(schema.contacts)
+    .where(
+      and(
+        eq(schema.contacts.portalUserId, portalUserId),
+        eq(schema.contacts.portalAccessEnabled, true),
+        isNull(schema.contacts.deletedAt),
+      ),
+    );
+}
