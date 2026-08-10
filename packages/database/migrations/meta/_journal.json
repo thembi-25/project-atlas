@@ -169,6 +169,27 @@
       "when": 1786242151890,
       "tag": "0023_financials_security_advisor_fixes",
       "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "7",
+      "when": 1786329068399,
+      "tag": "0024_inventory_suppliers_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 25,
+      "version": "7",
+      "when": 1786329069399,
+      "tag": "0025_inventory_rls_search_and_audit",
+      "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "7",
+      "when": 1786329070399,
+      "tag": "0026_inventory_security_advisor_fixes",
+      "breakpoints": true
     }
   ]
 }

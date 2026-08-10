@@ -2,7 +2,7 @@
   "name": "@atlas/suppliers",
   "version": "0.0.0",
   "private": true,
-  "description": "Suppliers domain module for Project Atlas. EMPTY SCAFFOLD as of Sprint 0 (Engineering Foundation) \u2014 implementation begins in Sprint 6 \u2014 Inventory & Suppliers.",
+  "description": "Suppliers domain module for Project Atlas. Implemented in Sprint 6 — Inventory & Suppliers. See docs/13-roadmap/sprint-6.md, docs/03-domain/suppliers.md.",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {
@@ -12,11 +12,19 @@
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "test:integration": "vitest run --config vitest.integration.config.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@atlas/database": "workspace:*",
+    "@atlas/identity": "workspace:*",
+    "@atlas/inventory": "workspace:*",
+    "drizzle-orm": "^0.36.1"
+  },
   "devDependencies": {
     "@atlas/config": "workspace:*",
+    "@atlas/properties": "workspace:*",
+    "@types/node": "^20.16.11",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
     "@typescript-eslint/parser": "^8.11.0",
     "eslint": "^8.57.1",

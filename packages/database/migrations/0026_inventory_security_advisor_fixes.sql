@@ -1,0 +1,17 @@
+-- Inventory & Suppliers (Sprint 6): post-migration security/performance
+-- advisor fix (mcp__Supabase__get_advisors after migrations 0024-0025),
+-- mirroring migrations 0014/0019/0023's precedent.
+--
+-- `unindexed_foreign_keys`: `stock_movements.location_id`'s foreign key
+-- is not covered — the composite index created in migration 0025
+-- (`idx_stock_movements_item_location_created` on `(inventory_item_id,
+-- location_id, created_at)`) only covers lookups on `inventory_item_id`
+-- as a leading column, not `location_id` alone, per Postgres's
+-- leftmost-prefix rule for multi-column B-tree indexes. A dedicated
+-- single-column index is required to cover the `location_id` FK itself.
+--
+-- Every other new index/FK finding from this advisor run is
+-- `unused_index`, expected and non-actionable for brand-new,
+-- zero-row tables (identical noise to every prior sprint's first
+-- advisor pass) — not fixed here.
+CREATE INDEX "idx_stock_movements_location_id" ON "inventory"."stock_movements" ("location_id");

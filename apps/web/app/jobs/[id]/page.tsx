@@ -10,14 +10,16 @@ import type {
   ScheduleEventDto,
   DispatchEventDto,
 } from '@/lib/scheduling-types';
+import type { InventoryItemDto, InventoryLocationDto, JobPartDto } from '@/lib/inventory-types';
 
 /**
  * Job detail page — jobs-prd.md §13: Property/Asset context, checklist,
  * scheduling, assignment, dispatch, and activity — jobs-prd.md/
- * scheduling-prd.md/dispatch-prd.md's documented sections only. No
- * Estimate/Invoice/Inventory section is rendered (Sprint 5+/6+ scope,
- * not yet implemented) — see SPRINT-4-COMPLETION-REPORT.md, "Known
- * Limitations".
+ * scheduling-prd.md/dispatch-prd.md's documented sections only, plus
+ * inventory-prd.md §13's "mobile 'add part' search/autocomplete on the
+ * Job screen" (Sprint 6). No Estimate/Invoice section is rendered
+ * (those live on their own Estimate/Invoice detail pages, not embedded
+ * here) — see SPRINT-4-COMPLETION-REPORT.md, "Known Limitations".
  */
 export default function JobDetailPage(): JSX.Element {
   return (
@@ -219,6 +221,8 @@ function JobDetailPageContent(): JSX.Element {
           {tasks.length === 0 ? <li className="text-muted-foreground">No Tasks.</li> : null}
         </ul>
       </section>
+
+      <PartsSection jobId={job.id} organizationId={organizationId} />
 
       <ScheduleSection
         jobId={job.id}
@@ -475,6 +479,168 @@ function DispatchSection({
           </Button>
         </div>
       ) : null}
+    </section>
+  );
+}
+
+/** inventory-prd.md §13: "mobile 'add part' search/autocomplete on the Job screen." Search here is a simple client-side filter over the Organization's Inventory Items — sufficient at this scale without a dedicated search endpoint. */
+function PartsSection({
+  jobId,
+  organizationId,
+}: {
+  jobId: string;
+  organizationId: string | null;
+}): JSX.Element {
+  const [parts, setParts] = useState<JobPartDto[]>([]);
+  const [items, setItems] = useState<InventoryItemDto[]>([]);
+  const [locations, setLocations] = useState<InventoryLocationDto[]>([]);
+  const [query, setQuery] = useState('');
+  const [selectedItemId, setSelectedItemId] = useState('');
+  const [locationId, setLocationId] = useState('');
+  const [quantity, setQuantity] = useState('1');
+  const [error, setError] = useState<string | null>(null);
+  const [warning, setWarning] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const load = useCallback(async () => {
+    if (!organizationId) return;
+    try {
+      const qs = `organization_id=${organizationId}`;
+      const [partsResult, itemsResult, locationsResult] = await Promise.all([
+        apiRequest<JobPartDto[]>(`/api/v1/jobs/${jobId}/parts?${qs}`),
+        apiRequest<InventoryItemDto[]>(`/api/v1/inventory-items?${qs}&limit=100`),
+        apiRequest<InventoryLocationDto[]>(`/api/v1/inventory-locations?${qs}`),
+      ]);
+      setParts(partsResult.data);
+      setItems(itemsResult.data);
+      setLocations(locationsResult.data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load Parts.');
+    }
+  }, [jobId, organizationId]);
+
+  useEffect(() => {
+    void load();
+  }, [load]);
+
+  if (!organizationId) return <></>;
+
+  const itemById = new Map(items.map((i) => [i.id, i]));
+  const matches = query
+    ? items.filter(
+        (item) =>
+          item.sku.toLowerCase().includes(query.toLowerCase()) ||
+          item.description.toLowerCase().includes(query.toLowerCase()),
+      )
+    : items;
+
+  const submit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setError(null);
+    setWarning(null);
+    try {
+      const result = await apiRequest<JobPartDto>(`/api/v1/jobs/${jobId}/parts`, {
+        method: 'POST',
+        body: JSON.stringify({
+          organization_id: organizationId,
+          inventory_item_id: selectedItemId,
+          location_id: locationId,
+          quantity: Number(quantity),
+        }),
+      });
+      if (result.data.warning) setWarning(result.data.warning);
+      setSelectedItemId('');
+      setQuery('');
+      setQuantity('1');
+      await load();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to add Part.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <section className="border-border mb-6 rounded-md border p-4">
+      <h2 className="mb-3 text-lg font-medium">Parts Used</h2>
+      <ul className="mb-4 flex flex-col gap-1 text-sm">
+        {parts.map((part) => (
+          <li key={part.id}>
+            {itemById.get(part.inventory_item_id)?.sku ?? part.inventory_item_id} × {part.quantity}{' '}
+            (${part.unit_cost_at_time} ea.)
+          </li>
+        ))}
+        {parts.length === 0 ? <li className="text-muted-foreground">No Parts used yet.</li> : null}
+      </ul>
+
+      <form onSubmit={submit} className="flex flex-col gap-2">
+        <div>
+          <Label htmlFor="part_search">Search parts</Label>
+          <Input
+            id="part_search"
+            placeholder="Search by SKU or description…"
+            value={query}
+            onChange={(event) => {
+              setQuery(event.target.value);
+              setSelectedItemId('');
+            }}
+          />
+          {query && !selectedItemId ? (
+            <ul className="border-border mt-1 max-h-40 overflow-auto rounded-md border text-sm">
+              {matches.map((item) => (
+                <li
+                  key={item.id}
+                  className="hover:bg-muted cursor-pointer px-2 py-1"
+                  onClick={() => {
+                    setSelectedItemId(item.id);
+                    setQuery(`${item.sku} — ${item.description}`);
+                  }}
+                >
+                  {item.sku} — {item.description}
+                </li>
+              ))}
+              {matches.length === 0 ? (
+                <li className="text-muted-foreground px-2 py-1">No matches.</li>
+              ) : null}
+            </ul>
+          ) : null}
+        </div>
+        <div className="flex gap-2">
+          <div className="flex-1">
+            <Label htmlFor="part_location">Location</Label>
+            <select
+              id="part_location"
+              required
+              className="border-border w-full rounded-md border px-3 py-2 text-sm"
+              value={locationId}
+              onChange={(event) => setLocationId(event.target.value)}
+            >
+              <option value="">Select a location…</option>
+              {locations.map((location) => (
+                <option key={location.id} value={location.id}>
+                  {location.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="w-24">
+            <Label htmlFor="part_quantity">Qty</Label>
+            <Input
+              id="part_quantity"
+              value={quantity}
+              onChange={(event) => setQuantity(event.target.value)}
+            />
+          </div>
+        </div>
+        {warning ? <p className="text-sm text-amber-700">{warning}</p> : null}
+        {error ? <p className="text-sm text-red-600">{error}</p> : null}
+        <div>
+          <Button type="submit" disabled={submitting || !selectedItemId}>
+            {submitting ? 'Adding…' : 'Add Part'}
+          </Button>
+        </div>
+      </form>
     </section>
   );
 }
