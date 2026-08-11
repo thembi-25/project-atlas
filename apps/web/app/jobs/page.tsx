@@ -87,9 +87,17 @@ function JobsPageContent(): JSX.Element {
     <main className="mx-auto max-w-5xl p-8">
       <div className="mb-6 flex items-center justify-between gap-4">
         <h1 className="text-2xl font-semibold">Jobs</h1>
-        <Button onClick={() => setShowCreate((v) => !v)}>
-          {showCreate ? 'Cancel' : '+ New Job'}
-        </Button>
+        <div className="flex gap-2">
+          <a
+            className="border-border hover:bg-muted inline-flex items-center rounded-md border px-3 py-2 text-sm"
+            href={`/api/v1/exports?resource_type=jobs&organization_id=${organizationId}${statusFilter ? `&status=${statusFilter}` : ''}`}
+          >
+            Export CSV
+          </a>
+          <Button onClick={() => setShowCreate((v) => !v)}>
+            {showCreate ? 'Cancel' : '+ New Job'}
+          </Button>
+        </div>
       </div>
 
       {showCreate ? (

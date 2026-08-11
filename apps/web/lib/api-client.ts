@@ -10,7 +10,13 @@
  */
 export interface ApiEnvelope<T> {
   data: T;
-  meta?: { next_cursor: string | null; has_more: boolean };
+  /**
+   * `next_cursor`/`has_more` cover cursor-paginated list responses; other
+   * routes (e.g. Analytics widgets) attach their own `meta` shape
+   * (`as_of`/`is_stale`/`scope`) — the intersection with `Record<string,
+   * unknown>` lets callers read those without a second envelope type.
+   */
+  meta?: { next_cursor?: string | null; has_more?: boolean } & Record<string, unknown>;
 }
 
 export async function apiRequest<T>(path: string, init?: RequestInit): Promise<ApiEnvelope<T>> {

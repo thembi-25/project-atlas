@@ -117,6 +117,8 @@ export type {
 // Application use cases — Payments
 export { capturePayment, recordPaymentReceivedEvent } from './application/capture-payment';
 export type { CapturePaymentParams, CapturePaymentResult } from './application/capture-payment';
+export { listPayments } from './application/manage-payment';
+export type { ListPaymentsParams } from './application/manage-payment';
 export { refundPayment } from './application/refund-payment';
 export type { RefundPaymentParams, RefundPaymentResult } from './application/refund-payment';
 export { processStripeWebhookEvent } from './application/stripe-webhook-handler';
@@ -145,11 +147,13 @@ export type { FinancialsResource } from './application/authorize';
 
 // Infrastructure types (read-only shapes useful to route handlers building responses)
 export type { Estimate } from './infrastructure/estimates';
-export { findApprovedEstimateForJob } from './infrastructure/estimates';
+export { findApprovedEstimateForJob, findEstimateById } from './infrastructure/estimates';
 export type { EstimateLineItem } from './infrastructure/estimate-line-items';
 export type { Invoice } from './infrastructure/invoices';
+export { findInvoiceById } from './infrastructure/invoices';
 export type { InvoiceLineItem } from './infrastructure/invoice-line-items';
+export { listInvoiceLineItems } from './infrastructure/invoice-line-items';
 export type { CreditNote } from './infrastructure/credit-notes';
 export { listCreditNotesForInvoice } from './infrastructure/credit-notes';
 export type { Payment, PaymentMethod, PaymentInitiatedBy } from './infrastructure/payments';
-export { listPaymentsForInvoice } from './infrastructure/payments';
+export { listPaymentsForInvoice, findPaymentById } from './infrastructure/payments';

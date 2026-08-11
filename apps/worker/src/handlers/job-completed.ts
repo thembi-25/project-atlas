@@ -2,8 +2,19 @@ import { withServiceContext, type DatabaseClient } from '@atlas/database';
 import { findApprovedEstimateForJob, generateInvoiceFromEstimateInTx } from '@atlas/financials';
 import { logger } from '../logger';
 
+/**
+ * The dispatcher (`domain-events-dispatcher.ts`) always sends
+ * `organizationId`/`customerId` too (from `job.completed`'s recorded
+ * payload — see `@atlas/jobs`'s `completeJob`); this handler itself only
+ * reads `jobId`, but declaring the full shape lets `index.ts` pass the
+ * same job data to both this handler and
+ * `job-completed-notify.ts`'s `handleJobCompletedNotifications` (which
+ * does need the other two fields) without a second, narrower type.
+ */
 export interface JobCompletedEventData {
   jobId: string;
+  organizationId: string;
+  customerId: string;
 }
 
 /**

@@ -1,4 +1,4 @@
-import { and, asc, eq, ne } from 'drizzle-orm';
+import { and, asc, eq, ne, sql } from 'drizzle-orm';
 import { schema, type DatabaseClient } from '@atlas/database';
 import type { PaymentStatus } from '../domain/lifecycle';
 
@@ -131,4 +131,55 @@ export async function listNonFailedPaymentsForInvoice(
     .select()
     .from(schema.payments)
     .where(and(eq(schema.payments.invoiceId, invoiceId), ne(schema.payments.status, 'failed')));
+}
+
+export interface PaymentCursor {
+  sortValue: string;
+  id: string;
+}
+
+export interface ListPaymentsParams {
+  organizationId: string;
+  limit: number;
+  cursor?: PaymentCursor | undefined;
+  status?: PaymentStatus | undefined;
+  invoiceId?: string | undefined;
+}
+
+export interface ListPaymentsResult {
+  rows: Payment[];
+  hasMore: boolean;
+}
+
+/**
+ * Organization-wide Payments listing — added Sprint 7 for CSV export
+ * (reporting-prd.md §7: "any core entity list ... can be exported with
+ * the same filters available in its list view"); no prior sprint needed
+ * this, since Payments were previously only ever listed per-Invoice (see
+ * `listPaymentsForInvoice` above). Backs both
+ * `apps/web/app/api/v1/payments/route.ts` (GET, new this sprint) and the
+ * CSV export route.
+ */
+export async function listPaymentsForOrganization(
+  tx: DatabaseClient,
+  params: ListPaymentsParams,
+): Promise<ListPaymentsResult> {
+  const conditions = [eq(schema.payments.organizationId, params.organizationId)];
+  if (params.status) conditions.push(eq(schema.payments.status, params.status));
+  if (params.invoiceId) conditions.push(eq(schema.payments.invoiceId, params.invoiceId));
+  if (params.cursor) {
+    conditions.push(
+      sql`(${schema.payments.createdAt}, ${schema.payments.id}) < (${new Date(params.cursor.sortValue)}::timestamptz, ${params.cursor.id}::uuid)`,
+    );
+  }
+
+  const rows = await tx
+    .select()
+    .from(schema.payments)
+    .where(and(...conditions))
+    .orderBy(sql`${schema.payments.createdAt} DESC, ${schema.payments.id} DESC`)
+    .limit(params.limit + 1);
+
+  const hasMore = rows.length > params.limit;
+  return { rows: hasMore ? rows.slice(0, params.limit) : rows, hasMore };
 }

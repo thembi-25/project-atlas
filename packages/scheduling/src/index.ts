@@ -49,6 +49,7 @@ export type { ScheduleEvent } from './infrastructure/schedule-events';
 export type { ScheduleEventAssignment } from './infrastructure/schedule-events';
 export type { ScheduleEventHistoryEntry, ScheduleConflict } from './infrastructure/schedule-events';
 export {
+  findScheduleEventByJobId,
   listScheduleEventAssignments,
   listScheduleEventHistory,
 } from './infrastructure/schedule-events';

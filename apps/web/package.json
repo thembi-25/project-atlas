@@ -14,6 +14,7 @@
     "test:integration": "vitest run --config vitest.integration.config.ts"
   },
   "dependencies": {
+    "@atlas/analytics": "workspace:*",
     "@atlas/assets": "workspace:*",
     "@atlas/auth": "workspace:*",
     "@atlas/config": "workspace:*",
@@ -24,7 +25,9 @@
     "@atlas/integrations": "workspace:*",
     "@atlas/inventory": "workspace:*",
     "@atlas/jobs": "workspace:*",
+    "@atlas/notifications": "workspace:*",
     "@atlas/properties": "workspace:*",
+    "@atlas/quickbooks": "workspace:*",
     "@atlas/scheduling": "workspace:*",
     "@atlas/suppliers": "workspace:*",
     "@atlas/ui": "workspace:*",

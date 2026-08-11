@@ -74,6 +74,7 @@ export {
   listRoleNamesForMembership,
 } from './infrastructure/memberships';
 export { listTeamsForOrganization, findTeamById } from './infrastructure/teams';
+export { listTeamIdsForUser, listUserIdsForTeams } from './infrastructure/teams';
 export { listRoles } from './infrastructure/roles';
 export { hasPermission } from './infrastructure/permissions';
 export type { HasPermissionParams } from './infrastructure/permissions';
@@ -84,3 +85,9 @@ export type { HasPermissionParams } from './infrastructure/permissions';
  * the first caller of this function from outside @atlas/identity itself.
  */
 export { upsertUserFromAuth } from './infrastructure/users';
+/**
+ * Cross-module read for Notifications (Sprint 7): resolving a staff
+ * recipient's email/phone for delivery — see
+ * `packages/notifications/src/application/resolve-recipient.ts`.
+ */
+export { findUserById } from './infrastructure/users';

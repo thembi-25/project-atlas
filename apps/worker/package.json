@@ -14,10 +14,17 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@atlas/analytics": "workspace:*",
     "@atlas/config": "workspace:*",
+    "@atlas/crm": "workspace:*",
     "@atlas/database": "workspace:*",
     "@atlas/financials": "workspace:*",
+    "@atlas/identity": "workspace:*",
     "@atlas/integrations": "workspace:*",
+    "@atlas/jobs": "workspace:*",
+    "@atlas/notifications": "workspace:*",
+    "@atlas/quickbooks": "workspace:*",
+    "@atlas/scheduling": "workspace:*",
     "drizzle-orm": "^0.36.1",
     "pg-boss": "^10.1.5"
   },

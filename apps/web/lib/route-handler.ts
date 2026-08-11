@@ -8,6 +8,9 @@ import { mapJobsError } from './jobs-errors';
 import { mapSchedulingError } from './scheduling-errors';
 import { mapFinancialsError } from './financials-errors';
 import { mapInventoryError } from './inventory-errors';
+import { mapNotificationsError } from './notifications-errors';
+import { mapAnalyticsError } from './analytics-errors';
+import { mapQuickBooksError } from './quickbooks-errors';
 import { getServerEnv } from './env';
 import { logger } from './logger';
 import { REQUEST_ID_HEADER, resolveRequestId } from './request-id';
@@ -45,6 +48,9 @@ export function withApiHandler<T, C = undefined>(
         mapSchedulingError(rawError) ??
         mapFinancialsError(rawError) ??
         mapInventoryError(rawError) ??
+        mapNotificationsError(rawError) ??
+        mapAnalyticsError(rawError) ??
+        mapQuickBooksError(rawError) ??
         toAppError(rawError);
 
       if (error.code === 'internal_error') {

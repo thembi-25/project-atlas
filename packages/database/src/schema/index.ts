@@ -18,3 +18,5 @@ export * from './properties';
 export * from './jobs';
 export * from './financials';
 export * from './inventory';
+export * from './notifications';
+export * from './integrations';

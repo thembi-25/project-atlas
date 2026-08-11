@@ -1,4 +1,4 @@
-import { and, eq } from 'drizzle-orm';
+import { and, eq, inArray } from 'drizzle-orm';
 import { schema, type DatabaseClient } from '@atlas/database';
 
 type Team = typeof schema.teams.$inferSelect;
@@ -48,4 +48,33 @@ export async function removeTeamMember(
         eq(schema.teamMembers.userId, params.userId),
       ),
     );
+}
+
+/**
+ * Cross-module read for Analytics (Sprint 7): a Dispatcher's "own Team"
+ * scope (roles.md, Role-to-module access summary — "Dispatcher: R (own
+ * team)") is every Team they're a member of, within the given
+ * Organization — see
+ * `packages/analytics/src/application/authorize.ts`.
+ */
+export async function listTeamIdsForUser(
+  tx: DatabaseClient,
+  organizationId: string,
+  userId: string,
+): Promise<string[]> {
+  const rows = await tx
+    .select({ teamId: schema.teamMembers.teamId })
+    .from(schema.teamMembers)
+    .innerJoin(schema.teams, eq(schema.teams.id, schema.teamMembers.teamId))
+    .where(and(eq(schema.teamMembers.userId, userId), eq(schema.teams.organizationId, organizationId)));
+  return rows.map((row) => row.teamId);
+}
+
+export async function listUserIdsForTeams(tx: DatabaseClient, teamIds: string[]): Promise<string[]> {
+  if (teamIds.length === 0) return [];
+  const rows = await tx
+    .select({ userId: schema.teamMembers.userId })
+    .from(schema.teamMembers)
+    .where(inArray(schema.teamMembers.teamId, teamIds));
+  return [...new Set(rows.map((row) => row.userId))];
 }

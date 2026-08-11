@@ -2,7 +2,7 @@
   "name": "@atlas/integrations",
   "version": "0.0.0",
   "private": true,
-  "description": "Third-party integration clients, isolated from domain packages. Currently: Stripe (ADR-018). Flat single package per docs/08-engineering/project-structure.md's precedent, not a nested per-integration package — a second integration (e.g. QuickBooks, Sprint 7) adds a sibling src/ subdirectory, not a new workspace package.",
+  "description": "Third-party integration clients, isolated from domain packages. Stripe (ADR-018, Sprint 5); Resend, Twilio, QuickBooks (ADR-017/ADR-019, Sprint 7). Flat single package per docs/08-engineering/project-structure.md's precedent, not a nested per-integration package — each provider is a sibling src/ subdirectory, not a separate workspace package.",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {
@@ -15,7 +15,9 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "stripe": "^17.7.0"
+    "stripe": "^17.7.0",
+    "resend": "^4.0.1",
+    "twilio": "^5.4.0"
   },
   "devDependencies": {
     "@atlas/config": "workspace:*",

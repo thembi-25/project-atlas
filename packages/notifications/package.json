@@ -1,0 +1,35 @@
+{
+  "name": "@atlas/notifications",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Notifications domain module for Project Atlas. Implemented in Sprint 7 — Core Operations MVP Hardening. See docs/13-roadmap/sprint-7.md, docs/06-modules/notifications-prd.md.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:integration": "vitest run --config vitest.integration.config.ts"
+  },
+  "dependencies": {
+    "@atlas/database": "workspace:*",
+    "@atlas/identity": "workspace:*",
+    "@atlas/crm": "workspace:*",
+    "@atlas/integrations": "workspace:*",
+    "drizzle-orm": "^0.36.1"
+  },
+  "devDependencies": {
+    "@atlas/config": "workspace:*",
+    "@types/node": "^20.16.11",
+    "@typescript-eslint/eslint-plugin": "^8.11.0",
+    "@typescript-eslint/parser": "^8.11.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
+  }
+}

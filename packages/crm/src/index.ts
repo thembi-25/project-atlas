@@ -75,6 +75,16 @@ export {
   listContactsByPortalUserId,
 } from './infrastructure/contacts';
 
+/**
+ * Cross-module reads for Notifications (Sprint 7): resolving a Portal
+ * Contact recipient's email/phone for delivery, and resolving a
+ * Customer's primary Contact as the default notification recipient for
+ * Job/Invoice/Payment events — see
+ * `packages/notifications/src/application/resolve-recipient.ts` and
+ * `apps/worker/src/handlers/*`.
+ */
+export { findContactById, findPrimaryContact } from './infrastructure/contacts';
+
 // Customer Portal (Sprint 5) auth application layer.
 export {
   requestPortalMagicLink,

@@ -190,6 +190,34 @@
       "when": 1786329070399,
       "tag": "0026_inventory_security_advisor_fixes",
       "breakpoints": true
+    },
+    {
+      "idx": 27,
+      "version": "7",
+      "when": 1786409737136,
+      "tag": "0027_notifications_integrations_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 28,
+      "version": "7",
+      "when": 1786409738136,
+      "tag": "0028_notifications_integrations_rls_and_audit",
+      "breakpoints": true
+    },
+    {
+      "idx": 29,
+      "version": "7",
+      "when": 1786409739136,
+      "tag": "0029_analytics_materialized_views",
+      "breakpoints": true
+    },
+    {
+      "idx": 30,
+      "version": "7",
+      "when": 1786409740136,
+      "tag": "0030_analytics_refresh_log",
+      "breakpoints": true
     }
   ]
 }

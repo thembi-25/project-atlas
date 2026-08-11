@@ -68,9 +68,17 @@ function InvoicesPageContent(): JSX.Element {
     <main className="mx-auto max-w-4xl p-8">
       <div className="mb-6 flex items-center justify-between gap-4">
         <h1 className="text-2xl font-semibold">Invoices</h1>
-        <Button onClick={() => setShowCreate((v) => !v)}>
-          {showCreate ? 'Cancel' : '+ New Invoice'}
-        </Button>
+        <div className="flex gap-2">
+          <a
+            className="border-border hover:bg-muted inline-flex items-center rounded-md border px-3 py-2 text-sm"
+            href={`/api/v1/exports?resource_type=invoices&organization_id=${organizationId}`}
+          >
+            Export CSV
+          </a>
+          <Button onClick={() => setShowCreate((v) => !v)}>
+            {showCreate ? 'Cancel' : '+ New Invoice'}
+          </Button>
+        </div>
       </div>
 
       {showCreate ? (

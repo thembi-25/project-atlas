@@ -9,13 +9,13 @@ import { logger } from './logger';
  * architecture.md) gets its own pg-boss queue created here, whether or
  * not a consumer is registered yet: the relay's job is to reliably move
  * rows out of `platform.domain_events` into pg-boss, decoupled from
- * whether a consumer exists — a future module (e.g. Notifications,
- * Sprint 7) can start consuming `estimate.approved`/`invoice.finalized`/
- * `payment.received` without any change here. `job.dispatched` is
- * excluded (see docs/13-roadmap/sprint-5.md — no consumer justifies it
- * yet, and Sprint 4's scheduling code stays untouched).
+ * whether a consumer exists. `job.dispatched` was excluded through
+ * Sprint 6 (see docs/13-roadmap/sprint-5.md — "no consumer justifies it
+ * yet") and is added in Sprint 7 now that Notifications is a real
+ * consumer (see `@atlas/scheduling`'s `dispatchJob`, which now emits it).
  */
 export const DOMAIN_EVENT_QUEUES = [
+  'job.dispatched',
   'job.completed',
   'estimate.approved',
   'invoice.finalized',
